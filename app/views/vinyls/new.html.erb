@@ -1,13 +1,13 @@
-<%= form_for @vinyl do |v| %>
-  <%= v.label :title %>
-  <%= v.text_field :title %><br/>
-  <%= v.label :artist %>
-  <%= v.text_field :artist %><br/>
-  <%= v.label :genre%>
-  <%= v.text_field :genre %><br/>
-  <%= v.label :format %>
-  <%= v.text_field :format %><br/>
-  <%= v.label :rating %>
-  <%= v.text_field :rating %><br/>
-  <%= v.submit %>
+<%= form_for @vinyl do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %><br/>
+  <%= form.label :artist %>
+  <%= form.text_field :artist %><br/>
+  <%= form.label :genre%>
+  <%= form.text_field :genre %><br/>
+  <%= form.label :format %>
+  <%= form.text_field :format %><br/>
+  <%= form.label :rating %>
+  <%= form.text_field :rating %><br/>
+  <%= form.submit %>
 <% end %>

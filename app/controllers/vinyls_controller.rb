@@ -1,17 +1,15 @@
 class VinylsController < ApplicationController
-  def index
-    @vinyls = Vinyl.all
-  end
-
-  def show
-    @vinyl = Vinyl.find(params[:id])
-  end
   
-  def new
-    @vinyl = Vinyl.new 
+  def index # GET /vinyls
+    @vinyls = Vinyl.all
+    session[:greeting] = "Hey Lewis"
   end
 
-  def create 
+  def new # GET /vinyls/new
+    @vinyl = Vinyl.new
+  end
+
+  def create # POST /vinyls
     @vinyl = Vinyl.new(params[:vinyl])
     if @vinyl.save
       redirect_to @vinyl, notice: 'Vinyl was successfully logged.'
@@ -19,4 +17,9 @@ class VinylsController < ApplicationController
       render 'new'
     end
   end
+
+  def show # GET /vinyl/[:id]
+    @vinyl = Vinyl.find(params[:id])
+  end
+
 end
