@@ -1,13 +1,17 @@
+<p class="notice"><%= notice %></p>
+
 <% @vinyls.each do |vinyl| %>
-  <ul>
-    <li><%= vinyl.title %></li>
-    <li><%= vinyl.artist %></li>
-    <li><%= vinyl.genre  %></li>
-    <li><%= vinyl.format %></li>
-    <li><%= vinyl.rating %></li>
-    <li><%= vinyl.user_email %></li>
-    <li><%= image_tag vinyl.album_art.url %>
-  </ul>
+  <div class="vinyl-container">
+    <ul class="vinyl-list">
+      <li><%= vinyl.title %></li>
+      <li><%= vinyl.artist %></li>
+      <li><%= vinyl.genre  %></li>
+      <li><%= vinyl.format %></li>
+      <li><%= vinyl.rating %></li>
+      <li><%= vinyl.user_email %></li>
+    </ul>
+    <%= image_tag vinyl.album_art.url, class: "album-art" %>
+  </div>
 <% end %>
 
-<%= link_to 'Add a Vinyl', new_vinyl_path %>
+<%= link_to 'Add a Vinyl', new_vinyl_path, class: "add-vinyl" %>
