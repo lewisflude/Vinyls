@@ -1,0 +1,11 @@
+<% @vinyls.each do |vinyl| %>
+  <ul>
+    <li><%= vinyl.title %></li>
+    <li><%= vinyl.artist %></li>
+    <li><%= vinyl.genre  %></li>
+    <li><%= vinyl.format %></li>
+    <li><%= vinyl.rating %></li>
+  </ul>
+<% end %>
+
+<%= link_to 'Add a Vinyl', new_vinyl_path %>
