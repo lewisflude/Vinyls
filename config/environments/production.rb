@@ -66,7 +66,7 @@ VinylRatings::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   config.paperclip_defaults = {
-    :storage -> s3,
+    :storage => s3,
     :s3_credentials => {
       :bucket => ENV['AWS_BUCKET'],
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
