@@ -1,7 +1,16 @@
 VinylRatings::Application.routes.draw do
+
+
+  root :to => "users#new"
+
   get "sessions/new"
 
   get "users/new"
+
+  get "log_out" => "sessions#destroy", :as => "log_out"
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "sign_up" => "users#new", :as => "sign_up"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -9,14 +18,12 @@ VinylRatings::Application.routes.draw do
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
-  #
-  get "signup" => "vinyls#new", :as => "sign_up"
-
+  
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
-  resources :vinyls
+  resources :vinyls, :users, :sessions
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

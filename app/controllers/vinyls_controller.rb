@@ -2,7 +2,7 @@ class VinylsController < ApplicationController
   
   def index # GET /vinyls
     @vinyls = Vinyl.all
-    session[:greeting] = "Hey Lewis"
+
   end
 
   def new # GET /vinyls/new
@@ -11,6 +11,7 @@ class VinylsController < ApplicationController
 
   def create # POST /vinyls
     @vinyl = Vinyl.new(params[:vinyl])
+    @vinyl.user_id = current_user.id
     if @vinyl.save
       redirect_to @vinyl, notice: 'Vinyl was successfully logged.'
     else

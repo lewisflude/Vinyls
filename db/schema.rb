@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130411175812) do
+ActiveRecord::Schema.define(:version => 20130411205244) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
@@ -27,8 +27,13 @@ ActiveRecord::Schema.define(:version => 20130411175812) do
     t.string   "format"
     t.string   "genre"
     t.string   "rating"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.integer  "user_id"
+    t.string   "album_art_file_name"
+    t.string   "album_art_content_type"
+    t.integer  "album_art_file_size"
+    t.datetime "album_art_updated_at"
   end
 
 end

@@ -9,5 +9,7 @@
   <%= form.text_field :format %><br/>
   <%= form.label :rating %>
   <%= form.text_field :rating %><br/>
+  <%= form.file_field :album_art %>
   <%= form.submit %>
 <% end %>
+<%= link_to "Back to Main", vinyls_path %>
