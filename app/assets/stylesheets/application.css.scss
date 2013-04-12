@@ -15,6 +15,12 @@
 @import "neat";
 @import "global/header";
 
+$mobile: new-breakpoint(max-width 500px 6);
+$med-screen: new-breakpoint(min-width 800px max-width 960px 6);
+$large-med-screen: new-breakpoint(max-width 900px 6);
+$large-screen: new-breakpoint(min-width 960px 12);
+
+
 body {
 $visual-grid: true;
   padding: 0; margin: 0;
@@ -29,50 +35,67 @@ $visual-grid: true;
 
 div#container {
   @include outer-container;
+
 }
 div.vinyl-container {
-  @include span-columns(3);
-  @include omega(4n);
+  
+  text-align: center;
+  
+  @include media($large-screen) {
+    @include span-columns(3);
+    @include omega(4n);
+
+  }
+
+  @include media($large-med-screen) {
+    @include span-columns(3);
+    @include omega(2n);
+
+  }
+
+  @include media($med-screen) {
+    @include span-columns(2);
+    @include omega(3n);
+
+  }
+  @include media($mobile) {
+    @include fill-parent;
+
+  }
+
+  
   position: relative;
-  height: 253px;
   margin-bottom: $gutter;
 
   img.album-art {
-  
+
+    display: inline-block;
+
+    width: 250px; height: 250px;
+    margin: 0 auto;
     border-radius: 4px;
-    width: 229px; height: 229px;
-    box-shadow: 0 0 12px rgba(black, 0.5);
-    margin: 12px;
-    position: absolute;
-    top: 0; left: 0;
     
+    box-shadow: 0 0 12px rgba(black, 0.5);
+
     z-index: -1;
     
-    @include clearfix;
     
   }
 
   ul.vinyl-list {
 
-    margin-top: 96px;
-
-    background: rgba(black, 0.8);
-    
-    list-style: none;
-    padding: 48px 0; margin: 0 auto;
     display: inline-block;
     
-    z-index: 1;
+    width: 250px;
+    height: 250px;
     
-    font-size: 12px;
-    font-weight: 700;
-    
-    width: 100%;
-    height: 100%;
+    padding: 0; margin: 0;
+    list-style: none;
 
-    text-align: center;
-    cursor: pointer;
-    
+    position: absolute;
+    top: 0;
+    background: rgba(black, 0.8);
+
     opacity: 0;
     
     @include transition (all 100ms ease-in-out);
