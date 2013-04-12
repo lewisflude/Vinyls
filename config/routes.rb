@@ -1,7 +1,7 @@
 VinylRatings::Application.routes.draw do
 
 
-  root :to => "users#new"
+  root :to => "vinyls#index"
 
   get "sessions/new"
 
