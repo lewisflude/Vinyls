@@ -10,7 +10,7 @@
       <li><%= vinyl.rating %></li>
       <li><%= vinyl.user_email %></li>
     </ul>
-    <%= image_tag vinyl.album_art.url, class: "album-art" %>
+    <%= image_tag vinyl.album_art.url(:medium), class: "album-art" %>
   </div>
 <% end %>
 

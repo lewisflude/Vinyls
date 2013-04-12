@@ -16,7 +16,7 @@
 @import "global/header";
 
 body {
-
+$visual-grid: true;
   padding: 0; margin: 0;
   background-color: #001620;
   color: #bcffff;
@@ -32,6 +32,7 @@ div#container {
 }
 div.vinyl-container {
   @include span-columns(3);
+  @include omega(4n);
   height: 253px;
   position: relative;
   
@@ -39,6 +40,7 @@ div.vinyl-container {
   overflow: hidden;
   img.album-art {
     width: 229px; height: 229px;
+    box-shadow: 0 0 12px rgba(black, 0.5);
     margin: 12px;
     position: absolute;
     top: 0; left: 0;
