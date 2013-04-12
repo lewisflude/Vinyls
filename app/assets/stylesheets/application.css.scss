@@ -16,9 +16,9 @@
 @import "global/header";
 
 $mobile: new-breakpoint(max-width 500px 6);
-$med-screen: new-breakpoint(min-width 800px max-width 960px 6);
-$large-med-screen: new-breakpoint(max-width 900px 6);
-$large-screen: new-breakpoint(min-width 960px 12);
+$med-screen: new-breakpoint(min-width 500px max-width 740px 6);
+$large-med-screen: new-breakpoint(min-width 740px max-width 1000px 6);
+$large-screen: new-breakpoint(min-width 1000px 12);
 
 
 body {
@@ -48,16 +48,16 @@ div.vinyl-container {
   }
 
   @include media($large-med-screen) {
-    @include span-columns(3);
-    @include omega(2n);
-
-  }
-
-  @include media($med-screen) {
     @include span-columns(2);
     @include omega(3n);
 
   }
+
+  @include media($med-screen) {
+    @include span-columns(3);
+    @include omega(2n);
+  }
+
   @include media($mobile) {
     @include fill-parent;
 
