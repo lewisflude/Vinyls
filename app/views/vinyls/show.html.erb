@@ -1,5 +1,16 @@
 <p class="notice"><%= notice %></p>
 
-<h1><%= session %></h1>
+<ul class="vinyl-list">
+  <li><%= @vinyl.title %></li>
+  <li><%= @vinyl.artist %></li>
+  <li><%= @vinyl.genre  %></li>
+  <li><%= @vinyl.format %></li>
+  <li><%= @vinyl.rating %></li>
+  <li><%= @vinyl.user_email %></li>
+</ul>
+
+<% if current_user.id = @vinyl.user_id %>
+  <%= link_to "Edit", edit_vinyl_path %>
+<% end %>
 
 <%= link_to 'Back to List', vinyls_path %>

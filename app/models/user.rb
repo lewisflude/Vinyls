@@ -11,6 +11,11 @@ class User < ActiveRecord::Base
 
   has_many :vinyls
 
+  validates_each :vinyls do |user, attr, value|
+    user.errors.add attr, "You can only have 9 vinyls at any given time." if user.vinyls.size >= 9
+  end
+
+
   def self.authenticate(email, password)
     user = find_by_email(email)
     if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)

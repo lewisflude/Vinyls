@@ -15,17 +15,19 @@
 @import "neat";
 @import "global/header";
 
-$mobile: new-breakpoint(max-width 500px 6);
-$med-screen: new-breakpoint(min-width 500px max-width 740px 6);
-$large-med-screen: new-breakpoint(min-width 740px max-width 1000px 6);
-$large-screen: new-breakpoint(min-width 1000px 12);
+$mobile: new-breakpoint(max-width 740px 6);
+$desktop: new-breakpoint(min-width 740px 6);
+
+a {
+  text-decoration: none;
+}
 
 
 body {
 $visual-grid: true;
   padding: 0; margin: 0;
-  background-color: #001620;
-  color: #bcffff;
+  background-color: black;
+  color: white;
   font: {
     family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     size: 16px/1em;
@@ -35,46 +37,44 @@ $visual-grid: true;
 
 div#container {
   @include outer-container;
+  width: 740px;
 
-}
-div.vinyl-container {
-  
-  text-align: center;
-  
-  @include media($large-screen) {
-    @include span-columns(3);
-    @include omega(4n);
+  @include media($desktop) {
+    max-width: 740px;
 
   }
 
-  @include media($large-med-screen) {
+  @include media($mobile) {
+    width: 480px;
+  }
+
+}
+a.vinyl-container {
+  
+  text-align: center;
+  margin-bottom: 24px;  
+
+
+  @include media($desktop) {
     @include span-columns(2);
     @include omega(3n);
 
   }
 
-  @include media($med-screen) {
-    @include span-columns(3);
-    @include omega(2n);
-  }
-
   @include media($mobile) {
-    @include fill-parent;
+    @include span-columns(4);
+    @include shift(1);
 
   }
 
-  
   position: relative;
-  margin-bottom: $gutter;
 
   img.album-art {
 
     display: inline-block;
 
-    width: 250px; height: 250px;
-    margin: 0 auto;
-    border-radius: 4px;
-    
+    width: 100%; height: 100%;
+    margin: 0 auto;    
     box-shadow: 0 0 12px rgba(black, 0.5);
 
     z-index: -1;
@@ -84,44 +84,66 @@ div.vinyl-container {
 
   ul.vinyl-list {
 
-    display: inline-block;
+    display: block;
     
-    width: 250px;
-    height: 250px;
+    width: 100%; height: 100%;
     
-    padding: 0; margin: 0;
+    padding: 24px; margin: 0;
     list-style: none;
 
     position: absolute;
-    top: 0;
+    top: 0; left: 0;
+    
     background: rgba(black, 0.8);
 
     opacity: 0;
     
-    @include transition (all 100ms ease-in-out);
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    
+    @include transition (all 120ms ease-in-out);
     
     &:hover {
       opacity: 1;
-      @include transition (all 100ms ease-in-out);
     }
+
+    li.artist {
+      margin-bottom: 24px;
+    }
+    li.title {
+
+    }
+
   }
 }
 
 a.add-vinyl {
-  @include span-columns(3);
-  background: rgba(black, 0.2);
+  @include media($desktop) {
+    @include span-columns(2);
+    @include omega(3n);
+
+  }
+
+  @include media($mobile) {
+    width: 312px;
+    height: 312px;
+    line-height: 312px;
+    margin: 0 auto 24px auto;
+
+  }
   text-align: center;
   display: block;
-  height: 253px;
-  line-height: 253px;
+  width: 218px; height: 218px;
+  margin-bottom: 24px;
+  border: 4px dashed white;
+  line-height: 218px;
   font-size: 24px;
-  border-radius: 4px;
   overflow: hidden;
   opacity: 0.5;
-  @include transition (all 100ms ease-in-out);
+  @include transition (opacity 200ms ease-in-out);
   &:hover {
     opacity: 1;
-    @include transition (all 100ms ease-in-out);
   }
 }
 

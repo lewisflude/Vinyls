@@ -10,9 +10,10 @@ class Vinyl < ActiveRecord::Base
     s3_host_name: "s3-eu-west-1.amazonaws.com",
     path: ":filename"
 
-  validates_presence_of :title
+  validates_presence_of :title, :artist
 
   belongs_to :user
+  validates_associated :user, :message => "You already have 9 vinyls."
   delegate :email, :to => :user, :prefix => true
 
   def get_info_from_lastfm

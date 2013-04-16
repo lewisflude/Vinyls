@@ -1,0 +1,18 @@
+<%= form_for @vinyl, html: { method: :put } do |form| %>
+
+  <fieldset><%= form.label :title %>
+    <%= form.text_field :title %></fieldset>
+  <fieldset><%= form.label :artist %>
+    <%= form.text_field :artist %></fieldset>
+  <fieldset><%= form.label :genre%>
+    <%= form.text_field :genre %></fieldset>
+  <fieldset><%= form.label :format %>
+    <%= form.text_field :format %></fieldset>
+  <fieldset><%= form.label :rating %>
+    <%= form.text_field :rating %></fieldset>
+  <fieldset><%= form.label :album_art %>
+    <%= form.file_field :album_art %></fieldset>
+  <%= form.submit %>
+<% end %>
+
+<%= link_to "Back to Main", vinyls_path, class: "back-to-main" %>

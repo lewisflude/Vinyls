@@ -5,15 +5,17 @@ header {
   
   @include outer-container;
 
+  border-bottom: 1px solid white;
   
-  @include linear-gradient(#0000ff, #00577c);
-  $header-border-radius: 12px;
-  border-bottom-left-radius: $header-border-radius;
-  border-bottom-right-radius: $header-border-radius;
-  
-
+  a#logo {
+    @include span-columns(6); 
+    text-transform: uppercase;
+    color: white;
+    font-size: 24px;
+  }
   
   nav {
+    text-align: right;
     @include span-columns(6);
     font-size: 12px;
     font-weight: 100;

@@ -1,16 +1,12 @@
 <% @vinyls.each do |vinyl| %>
-  
-  <div class="vinyl-container">
+  <%= link_to vinyl, class: "vinyl-container" do %>
     <ul class="vinyl-list">
-      <li><%= vinyl.title %></li>
-      <li><%= vinyl.artist %></li>
-      <li><%= vinyl.genre  %></li>
-      <li><%= vinyl.format %></li>
-      <li><%= vinyl.rating %></li>
-      <li><%= vinyl.user_email %></li>
+      <li class="artist"><%= vinyl.artist %></li>
+      <li class="title"><%= vinyl.title %></li>
     </ul>
     <%= image_tag vinyl.album_art.url(:medium), class: "album-art" %>
-  </div>
+  <% end %>
 <% end %>
-
-<%= link_to 'Add a Vinyl', new_vinyl_path, class: "add-vinyl" %>
+<% if @vinyls.count < 9 %>
+  <%= link_to 'Add a Vinyl', new_vinyl_path, class: "add-vinyl" %>
+<% end %>

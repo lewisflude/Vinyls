@@ -23,4 +23,17 @@ class VinylsController < ApplicationController
     @vinyl = Vinyl.find(params[:id])
   end
 
+  def edit 
+    @vinyl = Vinyl.find(params[:id])
+  end
+
+  def update
+    @Vinyl = Vinyl.find(params[:id])
+    if @Vinyl.update_attributes(vinyl: params[:vinyl])
+      redirect_to @Vinyl
+    else
+      render :edit
+    end
+  end
+
 end
