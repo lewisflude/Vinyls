@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130411205244) do
+ActiveRecord::Schema.define(:version => 20130416221606) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
@@ -24,9 +24,7 @@ ActiveRecord::Schema.define(:version => 20130411205244) do
   create_table "vinyls", :force => true do |t|
     t.string   "title"
     t.string   "artist"
-    t.string   "format"
     t.string   "genre"
-    t.string   "rating"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
     t.integer  "user_id"

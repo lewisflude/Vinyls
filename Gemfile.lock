@@ -79,6 +79,7 @@ GEM
       bourbon (>= 2.1)
       sass (>= 3.2)
     nokogiri (1.5.9)
+    nori (2.0.4)
     paperclip (2.8.0)
       activerecord (>= 2.3.0)
       activesupport (>= 2.3.2)
@@ -146,6 +147,7 @@ DEPENDENCIES
   jquery-rails
   lastfm
   neat
+  nori
   paperclip (~> 2.7)
   pg
   rails (= 3.2.13)

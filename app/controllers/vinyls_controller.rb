@@ -15,7 +15,7 @@ class VinylsController < ApplicationController
     if @vinyl.save
       redirect_to @vinyl, notice: 'Vinyl was successfully logged.'
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -28,12 +28,20 @@ class VinylsController < ApplicationController
   end
 
   def update
-    @Vinyl = Vinyl.find(params[:id])
-    if @Vinyl.update_attributes(vinyl: params[:vinyl])
-      redirect_to @Vinyl
+    @vinyl = Vinyl.find(params[:id])
+    @vinyl.user_id = current_user.id
+    if @vinyl.update_attributes(params[:vinyl])
+      redirect_to @vinyl, notice: 'Vinyl was successfully updated.'
     else
-      render :edit
+      render :edit, notice: 'Vinyl was not updated.'
     end
+  end
+
+  def destroy
+    @vinyl = Vinyl.find(params[:id])
+    @vinyl.destroy
+
+    redirect_to action: :index
   end
 
 end

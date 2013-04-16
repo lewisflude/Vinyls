@@ -22,6 +22,30 @@ a {
   text-decoration: none;
 }
 
+// Button Styling
+
+.button {
+
+  padding: 0 24px;
+  
+  background: #b4d455;
+  border: 1px solid lighten(#b4d544, 50%);
+
+  color: black;
+  
+  display: inline-block;
+  
+  border-radius: 4px;
+  cursor: pointer;
+  
+  @include transition (all 120ms ease-in-out);
+
+  &:hover {
+    background: lighten(#b4d455, 10%);
+  }
+  
+}
+
 
 body {
 $visual-grid: true;
@@ -153,6 +177,13 @@ a {
   color: complement(#bcffff);
 }
 
+ul.vinyl-list {
+  list-style: none;
+  
+  li {
+    margin-bottom: 24px;
+  }
+}
 
 form {
   @include span-columns(6);
@@ -185,25 +216,12 @@ form {
     padding: 16px;
     font-size: 16px;
   }
+}
 
-  input[type="submit"] {
-    @include fill-parent;
-    height: 48px;
-    line-height: 48px;
-    border: none;
-    border-radius: 8px;
-    
-    cursor: pointer;
-    
-    @include linear-gradient(invert(#001620), darken(invert(#001620), 10%));
-    @include transition (all 100ms ease-in-out);
-
-    &:hover {
-      @include linear-gradient(invert(#001620), darken(invert(#001620), 25%));
-      @include transition (all 100ms ease-in-out);
-
-
-    }
+ul.edit-links {
+  margin: 0 0 24px 0; list-style: none;
+  li {
+    display: inline-block;
   }
 }
 

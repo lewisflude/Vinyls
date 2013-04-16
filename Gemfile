@@ -12,6 +12,8 @@ gem 'aws-sdk'
 gem 'discogs-wrapper', require: 'discogs'
 gem 'lastfm', require: 'lastfm'
 
+gem 'nori', require: 'nori'
+
 
 group :development do
  gem 'awesome_print', require: 'awesome_print'
