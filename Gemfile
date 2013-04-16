@@ -9,6 +9,15 @@ gem 'pg'
 gem "paperclip", "~> 2.7"
 gem 'aws-sdk'
 
+gem 'discogs-wrapper', require: 'discogs'
+gem 'lastfm', require: 'lastfm'
+
+
+group :development do
+ gem 'awesome_print', require: 'awesome_print'
+
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

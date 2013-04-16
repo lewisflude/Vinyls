@@ -15,3 +15,5 @@
 /tmp
 
 config/s3.yml
+
+api_key.env
