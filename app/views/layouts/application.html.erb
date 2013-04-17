@@ -12,7 +12,7 @@
 
     <nav>
       <% if current_user %>
-        Logged in as <%= current_user.email %>
+        Logged in as <%= link_to current_user.username, user_path(current_user) %>
         <%= link_to "Log out", log_out_path %>
       <% else %>
         <%= link_to "Sign up", sign_up_path %> or
@@ -20,8 +20,6 @@
       <% end %>
     </nav>
   </header>
-
-  <p class="notice"><%= notice %></p>
 
   <div id="container">
 

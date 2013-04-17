@@ -1,0 +1,7 @@
+<% @users.each do |user| %>
+  <%= link_to user, class: "user-container" do %>
+    <ul class="user-list">
+      <li class="email"><%= user.email %></li>
+    </ul>
+  <% end %>
+<% end %>

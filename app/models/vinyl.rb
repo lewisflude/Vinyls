@@ -17,7 +17,8 @@ class Vinyl < ActiveRecord::Base
   validates_attachment_size :album_art, :less_than => 10.megabytes
 
   belongs_to :user
-  validates_associated :user, :message => "You already have 9 vinyls."
+  validates_associated :user, :message => "Can't add more than 9 releases. Remove one?"
+  
   delegate :email, :to => :user, :prefix => true
 
   # def get_info_from_lastfm

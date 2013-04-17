@@ -1,0 +1,23 @@
+<% @user.vinyls.each do |vinyl| %>
+  <%= link_to vinyl, class: "vinyl-container" do %>
+    <ul class="vinyl-list">
+      <li class="artist"><%= vinyl.artist %></li>
+      <li class="title"><%= vinyl.title %></li>
+    </ul>
+    <%= image_tag vinyl.album_art.url(:medium), class: "album-art" %>
+  <% end %>
+<% end %>
+
+<% if @user.vinyls.count < 9 %>
+  <%= link_to 'Add a Vinyl', new_vinyl_path, class: "add-vinyl" %>
+<% end %>
+
+
+<% if current_user %>
+  <ul class="edit-links">
+    <li><%= link_to "Edit", edit_user_path, class: "button secondary" %></li>
+    <li><%= link_to 'Destroy', { action: :destroy, id: @user.id }, method: :delete, data: { confirm: 'Are you sure?' }, class: "button caution" %></li>
+  </ul>
+<% end %>
+
+<%= link_to 'Back to List', users_path %>

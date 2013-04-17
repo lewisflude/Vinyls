@@ -2,7 +2,6 @@ class VinylsController < ApplicationController
   
   def index # GET /vinyls
     @vinyls = Vinyl.all
-
   end
 
   def new # GET /vinyls/new
@@ -13,7 +12,7 @@ class VinylsController < ApplicationController
     @vinyl = Vinyl.new(params[:vinyl])
     @vinyl.user_id = current_user.id
     if @vinyl.save
-      redirect_to @vinyl, notice: 'Vinyl was successfully logged.'
+      redirect_to @vinyl, notice: 'Release was successfully logged.'
     else
       render :new
     end

@@ -1,5 +1,9 @@
 <%= form_for @vinyl do |form| %>
 
+  <% @vinyl.errors.full_messages.each do |message| %>
+    <p><%= message %></p>
+  <% end %>
+
   <fieldset><%= form.label :title %>
     <%= form.text_field :title %></fieldset>
   <fieldset><%= form.label :artist %>
