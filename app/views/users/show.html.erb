@@ -13,7 +13,7 @@
 <% end %>
 
 
-<% if current_user.id = @user.id %>
+<% if current_user.id == @user.id %>
   <ul class="edit-links">
     <li><%= link_to "Edit", edit_user_path, class: "button secondary" %></li>
     <li><%= link_to 'Destroy', { action: :destroy, id: @user.id }, method: :delete, data: { confirm: 'Are you sure?' }, class: "button caution" %></li>
