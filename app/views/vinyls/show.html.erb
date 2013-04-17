@@ -1,9 +1,9 @@
 <p class="notice"><%= notice %></p>
 
 <ul class="vinyl-list">
-  <li><%= @vinyl.title %></li>
-  <li><%= @vinyl.artist %></li>
-  <li><%= @vinyl.thoughts %></li>
+  <li class="artist"><%= @vinyl.artist %></li>
+  <li class="title"><%= @vinyl.title %></li>
+  <li class="thoughts"><%= @vinyl.thoughts %></li>
   <li><%= image_tag @vinyl.album_art.url %></li>
 </ul>
 

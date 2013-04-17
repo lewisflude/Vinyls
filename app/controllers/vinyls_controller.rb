@@ -9,8 +9,11 @@ class VinylsController < ApplicationController
   end
 
   def create # POST /vinyls
-    @vinyl = Vinyl.new(params[:vinyl])
-    @vinyl.user_id = current_user.id
+    @vinyl = current_user.vinyls.build(params[:vinyl]) 
+    
+    # @vinyl = Vinyl.new(params[:vinyl])
+    # @vinyl.user_id = current_user.id
+
     if @vinyl.save
       redirect_to @vinyl, notice: 'Release was successfully logged.'
     else

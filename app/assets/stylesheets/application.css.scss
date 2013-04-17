@@ -129,13 +129,17 @@ a.vinyl-container {
     &:hover {
       opacity: 1;
     }
+    li {     
 
+    }
     li.artist {
       margin-bottom: 24px;
     }
     li.title {
 
     }
+
+
 
   }
 }
@@ -181,6 +185,26 @@ ul.vinyl-list {
   
   li {
     margin-bottom: 24px;
+    &.artist {
+      font-size: 48px;
+      line-height: 48px;
+    }
+    &.title {
+      font-size: 24px;
+      line-height: 24px;
+    }
+    &.thoughts {
+      padding: 24px;
+      background: white;
+      color: black;
+    }
+    img {
+      padding: 4px;
+      border-radius: 4px;
+      background: white;
+      max-width: 250px;
+      max-height: 250px;
+    }
   }
 }
 
