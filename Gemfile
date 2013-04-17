@@ -9,11 +9,7 @@ gem 'pg'
 gem "paperclip", "~> 2.7"
 gem 'aws-sdk'
 
-gem 'discogs-wrapper', require: 'discogs'
-gem 'lastfm', require: 'lastfm'
-
-gem 'nori', require: 'nori'
-
+# gem 'discogs-wrapper', require: 'discogs'
 
 group :development do
  gem 'awesome_print', require: 'awesome_print'
