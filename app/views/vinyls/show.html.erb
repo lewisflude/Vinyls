@@ -6,10 +6,11 @@
   <li><%= image_tag @vinyl.album_art.url %></li>
 </ul>
 
-<% if current_user.id = @vinyl.user_id %>
+<% if current_user.id == @vinyl.user_id %>
   <ul class="edit-links">
     <li><%= link_to "Edit", edit_vinyl_path, class: "button secondary" %></li>
     <li><%= link_to 'Destroy', { action: :destroy, id: @vinyl.id }, method: :delete, data: { confirm: 'Are you sure?' }, class: "button caution" %></li>
   </ul>
 <% end %>
+
 <%= link_to 'Back to List', vinyls_path %>
