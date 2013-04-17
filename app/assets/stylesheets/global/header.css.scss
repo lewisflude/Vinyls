@@ -18,7 +18,12 @@ header {
     text-align: right;
     @include span-columns(6);
     font-size: 12px;
-    font-weight: 100;
     letter-spacing: 2px;
+    text-transform: uppercase;
+    a:first-child {
+      padding: 4px;
+      background: yellow;
+      color: black;
+    }
   }
 }
