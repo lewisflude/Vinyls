@@ -16,6 +16,8 @@ header {
   
   nav {
     text-align: right;
+    word-wrap: none;
+    white-space: nowrap;
     @include span-columns(6);
     font-size: 12px;
     letter-spacing: 2px;
