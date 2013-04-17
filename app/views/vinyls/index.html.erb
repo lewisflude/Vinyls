@@ -9,11 +9,14 @@
 <% end %>
 
 <% if current_user %>
-
-  <%= link_to 'Add a Vinyl', new_vinyl_path, class: "add-vinyl" %>
-
+  <div class="add-vinyl">
+    <%= link_to 'Add a Record', new_vinyl_path %>
+    <div class="vinyl-count"><%= current_user.vinyls.count + 1 %></div>
+      <%= link_to 'Add a Record', new_vinyl_path %>
+    </div>
+  </div>
 <% else %>
-
-  <%= link_to 'Sign up', sign_up_path, class: "add-vinyl" %>
-
+  <div class="add-vinyl">
+    <%= link_to 'Sign up', sign_up_path, class: "add-vinyl" %>
+  </div>
 <% end %>

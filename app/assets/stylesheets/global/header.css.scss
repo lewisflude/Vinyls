@@ -22,8 +22,9 @@ header {
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    a:first-child {
+    a.sign-up, a.current-user {
       padding: 4px;
+      display: inline;
       background: yellow;
       color: black;
     }

@@ -9,7 +9,10 @@
 <% end %>
 
 <% if @user.vinyls.count < 9 %>
-  <%= link_to 'Add a Record', new_vinyl_path, class: "add-vinyl" %>
+  <div class="add-vinyl">
+  <div class="vinyl-count"><%= current_user.vinyls.count + 1 %></div>
+    <%= link_to 'Add a Record', new_vinyl_path %>
+  </div>
 <% end %>
 
 

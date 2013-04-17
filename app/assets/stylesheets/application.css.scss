@@ -144,7 +144,9 @@ a.vinyl-container {
   }
 }
 
-a.add-vinyl {
+div.add-vinyl {
+
+  position: relative;
   text-transform: uppercase;
   @include media($desktop) {
     @include span-columns(2);
@@ -152,20 +154,42 @@ a.add-vinyl {
 
   }
 
+  a {
+    padding-top: 80px;
+    display: block; position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  div.vinyl-count {
+    position: absolute;
+    top: 142px; right: 90px;
+    display: inherit;
+    font-size: 12px; line-height: 24px;
+    border: 1px solid yellow;
+    padding: 4px;
+    width: 32px; height: 32px;
+    border-radius: 16px;
+    
+
+  }
+
   @include media($mobile) {
     width: 312px;
     height: 312px;
-    line-height: 312px;
+    line-height: 48px;
     margin: 0 auto 24px auto;
-
   }
+
   text-align: center;
   display: block;
   width: 218px; height: 218px;
   margin-bottom: 24px;
   border: 4px dashed white;
-  line-height: 218px;
+  line-height: 48px;
   font-size: 24px;
+  padding-top: 78px;
   overflow: hidden;
   opacity: 0.5;
   @include transition (opacity 200ms ease-in-out);
@@ -173,6 +197,7 @@ a.add-vinyl {
     opacity: 1;
   }
 }
+
 
 // Typography
 
@@ -260,4 +285,11 @@ ul.edit-links {
 
 a.back-to-main {
   float: left;
+}
+
+div.remaining-vinyls {
+  display: inline;
+  float: left;
+  font-weight: 100;
+  margin-right: 24px;
 }
