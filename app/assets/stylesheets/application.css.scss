@@ -141,6 +141,7 @@ a.vinyl-container {
 }
 
 a.add-vinyl {
+  text-transform: uppercase;
   @include media($desktop) {
     @include span-columns(2);
     @include omega(3n);

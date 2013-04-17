@@ -11,4 +11,9 @@
 <% if current_user %>
 
   <%= link_to 'Add a Vinyl', new_vinyl_path, class: "add-vinyl" %>
+
+<% else %>
+
+  <%= link_to 'Sign up', sign_up_path, class: "add-vinyl" %>
+
 <% end %>
