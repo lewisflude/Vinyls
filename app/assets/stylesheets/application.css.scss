@@ -29,7 +29,12 @@ a {
   padding: 0 24px;
   
   background: yellow;
-  border: 1px solid lighten(yellow, 50%);
+  border-top: 4px solid lighten(yellow, 50%);
+  border-left: 4px solid lighten(yellow, 25%);
+  border-right: 4px solid lighten(yellow, 25%);
+  border-bottom: 4px solid darken(yellow, 25%);
+  
+  line-height: 20px;
 
   color: black;
   
@@ -39,7 +44,7 @@ a {
   @include transition (all 120ms ease-in-out);
 
   &:hover {
-    background: lighten(yellow, 10%);
+    background: lighten(yellow, 25%);
   }
   
 }
@@ -205,6 +210,13 @@ a {
   color: white;
 }
 
+p.large-text {
+  text-align: center;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 100;
+}
+
 ul.single-vinyl-list {
   list-style: none;
   
@@ -236,7 +248,6 @@ ul.single-vinyl-list {
 form {
   @include span-columns(6);
   @include shift(3);
-  text-transform: uppercase;
   label {
     @include fill-parent;
   }
@@ -261,6 +272,7 @@ form {
 
   label, input {
     height: 48px;
+    
     line-height: 48px;
     
     font-size: 24px;
@@ -268,6 +280,11 @@ form {
     margin-bottom: 24px;
   }
 
+  label {
+    display: inline-block;
+    @include fill-parent;
+    margin-bottom: 0;
+  }
   input[type="file"] {
     line-height: 0;
     padding: 16px;
