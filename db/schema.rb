@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130417082422) do
+ActiveRecord::Schema.define(:version => 20130417203659) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20130417082422) do
     t.string   "album_art_content_type"
     t.integer  "album_art_file_size"
     t.datetime "album_art_updated_at"
+    t.string   "thoughts"
   end
 
 end

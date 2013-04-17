@@ -28,20 +28,18 @@ a {
 
   padding: 0 24px;
   
-  background: #b4d455;
-  border: 1px solid lighten(#b4d544, 50%);
+  background: yellow;
+  border: 1px solid lighten(yellow, 50%);
 
   color: black;
   
   display: inline-block;
-  
-  border-radius: 4px;
   cursor: pointer;
   
   @include transition (all 120ms ease-in-out);
 
   &:hover {
-    background: lighten(#b4d455, 10%);
+    background: lighten(yellow, 10%);
   }
   
 }
@@ -194,6 +192,15 @@ form {
   }
   input {
     @include fill-parent;
+
+  }
+
+  textarea {
+    @include fill-parent;
+    font-size:16px;
+    line-height: 24px;
+    padding: 24px;
+    height: 144px;
   }
 
   fieldset {

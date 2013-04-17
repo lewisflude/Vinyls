@@ -1,6 +1,6 @@
 class Vinyl < ActiveRecord::Base
 
-  attr_accessible :title, :artist, :genre, :format, :rating, :album_art
+  attr_accessible :title, :artist, :genre, :thoughts, :album_art
   
   has_attached_file :album_art, :styles => { 
     medium: "300x300!", 

@@ -10,6 +10,8 @@
     <%= form.text_field :artist %></fieldset>
   <fieldset><%= form.label :genre%>
     <%= form.text_field :genre %></fieldset>
+<fieldset><%= form.label :thoughts%>
+    <%= form.text_area :thoughts %></fieldset>
   <fieldset><%= form.label :album_art %>
     <%= form.file_field :album_art %></fieldset>
   <%= form.submit 'Add a Vinyl', class: 'button' %>
