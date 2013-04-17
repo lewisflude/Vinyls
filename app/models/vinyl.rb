@@ -10,7 +10,8 @@ class Vinyl < ActiveRecord::Base
     storage: :s3, 
     s3_credentials: S3_CREDENTIALS,
     s3_host_name: "s3-eu-west-1.amazonaws.com",
-    path: ":filename"
+    path: ":hash",
+    hash_secret: "492091f930411ba79c07d4e434226267f55f4626b3603e9f912539c03a750888bbec9ddf046b550efea9f74cfe3fa9ed8fd4ab87ce5b1378250fd89f8c704fb1"
 
   validates_presence_of :title, :artist
   validates_attachment_presence :album_art
