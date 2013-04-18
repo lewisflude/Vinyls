@@ -1,9 +1,12 @@
 <% if current_user %>
-  <div class="add-vinyl">
-    <%= link_to 'Add a Record', new_vinyl_path %>
-    <div class="vinyl-count"><%= current_user.vinyls.count + 1 %></div>
+  <% if current_user.vinyls.count < 9 %>
+    <div class="add-vinyl">
       <%= link_to 'Add a Record', new_vinyl_path %>
-  </div>
+      <div class="vinyl-count"><%= current_user.vinyls.count + 1 %></div>
+        <%= link_to 'Add a Record', new_vinyl_path %>
+    </div>
+  <% end %>
+
 <% else %>
   <div class="add-vinyl">
     <%= link_to 'Sign up', sign_up_path, class: "add-vinyl" %>
