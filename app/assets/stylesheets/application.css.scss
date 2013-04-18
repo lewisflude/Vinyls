@@ -179,9 +179,9 @@ div.add-vinyl {
   }
 
   div.vinyl-count {
-    position: absolute;
-    top: 142px; right: 90px;
-    display: inherit;
+    display: inline-block;
+    position: relative;
+    top: 144px;
     font-size: 12px; line-height: 24px;
     border: 1px solid yellow;
     padding: 4px;
