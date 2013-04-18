@@ -1,4 +1,4 @@
-<% if current_user.id == @user.id %>
+<% if current_user == @user %>
   <% if @user.vinyls.count < 9 %>
     <div class="add-vinyl">
     <div class="vinyl-count"><%= current_user.vinyls.count + 1 %></div>
