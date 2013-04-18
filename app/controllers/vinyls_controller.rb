@@ -15,7 +15,7 @@ class VinylsController < ApplicationController
     # @vinyl.user_id = current_user.id
 
     if @vinyl.save
-      redirect_to @vinyl, notice: 'Release was successfully logged.'
+      redirect_to current_user, notice: 'Release was successfully logged.'
     else
       render :new
     end

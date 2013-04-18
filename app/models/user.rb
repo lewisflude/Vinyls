@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates_presence_of :username, :email
   validates_uniqueness_of :username, :email
 
-  has_many :vinyls
+  has_many :vinyls, order: 'created_at DESC'
 
   validates_each :vinyls do |user, attr, value|
     user.errors.add :base, "Can't add more than 9 releases. Remove one?" if user.vinyls.size >= 9
