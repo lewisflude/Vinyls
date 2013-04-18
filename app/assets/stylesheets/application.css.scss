@@ -155,7 +155,10 @@ a.vinyl-container {
 div.add-vinyl {
 
   position: relative;
+  width: 223px; height: 223px;
   text-transform: uppercase;
+  margin-bottom: 24px;
+
   @include media($desktop) {
     @include span-columns(2);
     @include omega(3n);
@@ -166,8 +169,13 @@ div.add-vinyl {
     padding-top: 80px;
     display: block; position: absolute;
     top: 0; left: 0;
-    height: 100%;
-    width: 100%;
+    width: 223px; height: 223px;
+    display: block;
+    border: 4px dashed white;
+    line-height: 48px;
+    font-size: 24px;
+    padding-top: 78px;
+
   }
 
   div.vinyl-count {
@@ -180,7 +188,6 @@ div.add-vinyl {
     width: 32px; height: 32px;
     border-radius: 16px;
     
-
   }
 
   @include media($mobile) {
@@ -191,13 +198,7 @@ div.add-vinyl {
   }
 
   text-align: center;
-  display: block;
-  width: 218px; height: 218px;
-  margin-bottom: 24px;
-  border: 4px dashed white;
-  line-height: 48px;
-  font-size: 24px;
-  padding-top: 78px;
+
   overflow: hidden;
   opacity: 0.5;
   @include transition (opacity 200ms ease-in-out);
