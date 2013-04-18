@@ -225,6 +225,7 @@ p.large-text {
 
 ul.single-vinyl-list {
   list-style: none;
+  padding: 0;
   
   li {
     margin-bottom: 24px;
@@ -299,6 +300,7 @@ form {
 }
 
 ul.edit-links {
+  padding: 0;
   margin: 0 0 24px 0; list-style: none;
   li {
     display: inline-block;
