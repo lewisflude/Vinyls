@@ -112,6 +112,8 @@ a.vinyl-container {
     
   }
 
+
+
   ul.vinyl-list {
 
     display: block;
@@ -152,6 +154,28 @@ a.vinyl-container {
 
 
   }
+}
+
+.username {
+  padding: 4px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  background: yellow;
+  a { 
+
+    color: black; 
+  }
+}
+.username-header {
+  @include fill-parent;
+  background: black;
+  font-weight: 100;
+  border-bottom: 1px solid yellow;
+  a { color: yellow; }
 }
 
 div.add-vinyl {

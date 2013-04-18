@@ -1,8 +1,17 @@
-<% if @user.vinyls.count < 9 %>
-  <div class="add-vinyl">
-  <div class="vinyl-count"><%= current_user.vinyls.count + 1 %></div>
-    <%= link_to 'Add a Record', new_vinyl_path %>
-  </div>
+<% if current_user %>
+  <% if @user.vinyls.count < 9 %>
+    <div class="add-vinyl">
+    <div class="vinyl-count"><%= current_user.vinyls.count + 1 %></div>
+      <%= link_to 'Add a Record', new_vinyl_path %>
+    </div>
+  <% end %>
+
+<% else %>
+
+<div class="username username-header">
+  <%= link_to @user.username, @user %>
+</div>
+<span>
 <% end %>
 
 <% @user.vinyls.each do |vinyl| %>

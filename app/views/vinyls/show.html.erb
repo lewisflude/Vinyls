@@ -5,6 +5,7 @@
 <ul class="single-vinyl-list">
   <li class="artist"><%= @vinyl.artist %></li>
   <li class="title"><%= @vinyl.title %></li>
+  <li class="username"><%= link_to @vinyl.user.username, @vinyl.user %></li>
   <li class="thoughts"><%= @vinyl.thoughts %></li>
   <li><%= image_tag @vinyl.album_art.url %></li>
 </ul>
