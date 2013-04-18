@@ -1,7 +1,7 @@
 class VinylsController < ApplicationController
   
   def index # GET /vinyls
-    @vinyls = Vinyl.all
+    @vinyls = Vinyl.all(order: "created_at DESC")
   end
 
   def new # GET /vinyls/new
