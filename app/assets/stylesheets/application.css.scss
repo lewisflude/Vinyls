@@ -29,9 +29,12 @@ a {
   padding: 0 24px;
   
   background: yellow;
-  border-top: 4px solid lighten(yellow, 25%);
-  border-left: 4px solid lighten(yellow, 15%);
-  border-right: 4px solid lighten(yellow, 15%);
+  
+  @include linear-gradient(lighten(yellow, 5%), darken(yellow, 5%));
+
+  border-top: 4px solid lighten(yellow, 15%);
+  border-left: 4px solid yellow;
+  border-right: 4px solid yellow;
   border-bottom: 4px solid darken(yellow, 15%);
   
   line-height: 20px;
