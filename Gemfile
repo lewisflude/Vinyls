@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 gem "paperclip", "~> 2.7"
+gem 'clearance', '1.0.0.rc7'
 gem 'aws-sdk'
 
 # gem 'discogs-wrapper', require: 'discogs'

@@ -20,12 +20,8 @@ class UsersController < ApplicationController
   end
 
 
-  def show # GET /user/[:id]
-    if params[:id].nil? #
-        @user = current_user
-    else
-        @user = User.find params[:id]
-    end  
+  def show # GET /:username
+    @user = User.find_by_username!(params[:username])
   end
 
   def edit 
