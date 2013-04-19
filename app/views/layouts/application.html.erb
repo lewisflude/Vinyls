@@ -10,12 +10,12 @@
   <header>
     <%= link_to "Vinyls", root_path, id: "logo" %>
     <nav>
-      <% if current_user %>
+      <% if signed_in? %>
         Logged in as <%= link_to current_user.username, user_path(current_user), class: "current-user" %>
-        <%= link_to "Log out", log_out_path %>
+        <%= link_to "Sign out", sign_out_path, method: "delete" %>
       <% else %>
         <%= link_to "Sign up", sign_up_path, class: "sign-up" %> or
-        <%= link_to "Log in", log_in_path %>
+        <%= link_to "Sign in", sign_in_path %>
       <% end %>
 
     </nav>

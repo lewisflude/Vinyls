@@ -1,15 +1,5 @@
 VinylRatings::Application.routes.draw do
 
-
-
-  get "sessions/new"
-
-  get "users/new"
-
-  get "log_out" => "sessions#destroy", :as => "log_out"
-  get "log_in" => "sessions#new", :as => "log_in"
-  get "sign_up" => "users#new", :as => "sign_up"
-
   match 'all' => 'vinyls#index'
 
   # The priority is based upon order of creation:
@@ -23,7 +13,7 @@ VinylRatings::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
-  resources :vinyls, :users, :sessions
+  resources :vinyls
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -64,7 +54,9 @@ VinylRatings::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
 
-  get "/:username", to: "users#show"
+  # get "/:username", to: "users#show"
+
+  get "/:username", to: "users#show", as: "user"
 
   root :to => 'vinyls#index'
 
