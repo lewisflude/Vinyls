@@ -56,10 +56,11 @@ VinylRatings::Application.routes.draw do
 
   # get "/:username", to: "users#show"
 
-  get "/:username", to: "users#show", as: "user"
-
   root :to => 'vinyls#index'
 
+  get '/sign_in' => 'clearance/sessions#new', :as => 'sign_in'
+  delete '/sign_out' => 'clearance/sessions#destroy', :as => 'sign_out'
+  get "/:username", to: "users#show", as: "user"
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
