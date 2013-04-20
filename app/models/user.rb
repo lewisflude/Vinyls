@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
+
   include Clearance::User
+
   attr_accessible :username
+  validates_format_of :username, with: /\A[a-z][a-z0-9_-]{2,19}\Z/
 
   has_many :vinyls, order: 'created_at DESC'
 
