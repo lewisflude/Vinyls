@@ -58,8 +58,9 @@ VinylRatings::Application.routes.draw do
 
   root :to => 'vinyls#index'
 
-  get '/sign_in' => 'clearance/sessions#new', :as => 'sign_in'
-  delete '/sign_out' => 'clearance/sessions#destroy', :as => 'sign_out'
+  get '/sign_in' => 'clearance/sessions#new', as: 'sign_in'
+  get '/sign_up' => 'clearance/users#new', as: 'sign_up'
+  delete '/sign_out' => 'clearance/sessions#destroy', as:'sign_out'
   get "/:username", to: "users#show", as: "user"
   # See how all your routes lay out with "rake routes"
 
