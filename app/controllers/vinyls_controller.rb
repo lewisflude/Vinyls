@@ -21,6 +21,7 @@ class VinylsController < ApplicationController
 
     @vinyl.album_art = open(lastfm.fetch_album_art(@vinyl.title))
 
+    @vinyl.genre = lastfm.fetch_album_genre(@vinyl.artist, @vinyl.title)
 
     if @vinyl.save
       redirect_to current_user, notice: 'Release was successfully logged.'
