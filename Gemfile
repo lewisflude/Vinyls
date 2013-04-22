@@ -6,6 +6,8 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'rest-client'
+
 gem "paperclip", "~> 2.7"
 gem 'clearance', '1.0.0.rc7'
 gem 'aws-sdk'

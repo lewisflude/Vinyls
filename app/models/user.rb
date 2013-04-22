@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
   include Clearance::User
 
-  attr_accessible :username
+  attr_accessible :username, :remember_token
   validates_format_of :username, with: /\A[a-z0-9_-]{2,19}\Z/i
 
   has_many :vinyls, order: 'created_at DESC'

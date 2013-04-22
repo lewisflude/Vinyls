@@ -1,5 +1,5 @@
 class VinylsController < ApplicationController
-  
+
   def index # GET /vinyls
     @vinyls = Vinyl.all(order: "created_at DESC", limit: 50)
   end
@@ -9,10 +9,18 @@ class VinylsController < ApplicationController
   end
 
   def create # POST /vinyls
-    @vinyl = current_user.vinyls.build(params[:vinyl]) 
     
-    # @vinyl = Vinyl.new(params[:vinyl])
-    # @vinyl.user_id = current_user.id
+    require 'lastfm'
+    require 'open-uri'
+
+    @vinyl = current_user.vinyls.build(params[:vinyl]) 
+
+    # Fetch album_art from Last.fm
+
+    lastfm = Lastfm.new
+
+    @vinyl.album_art = open(lastfm.fetch_album_art(@vinyl.title))
+
 
     if @vinyl.save
       redirect_to current_user, notice: 'Release was successfully logged.'
