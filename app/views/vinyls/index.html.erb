@@ -1,9 +1,18 @@
 <% if current_user %>
   <% if current_user.vinyls.count < 9 %>
     <div class="add-vinyl">
-      <%= link_to 'Add a Record', new_vinyl_path %>
-      <div class="vinyl-count"><%= current_user.vinyls.count + 1 %></div>
-        <%= link_to 'Add a Record', new_vinyl_path %>
+      <%= form_for @vinyl do |form| %>
+
+        <% @vinyl.errors.full_messages.each do |message| %>
+          <p><%= message %></p>
+        <% end %>
+
+        <fieldset><%= form.label :title %>
+          <%= form.text_field :title %></fieldset>
+        <fieldset><%= form.label :artist %>
+          <%= form.text_field :artist %></fieldset>
+        <%= form.submit 'Add a Record', class: 'button' %>
+      <% end %>
     </div>
   <% end %>
 

@@ -2,6 +2,7 @@ class VinylsController < ApplicationController
 
   def index # GET /vinyls
     @vinyls = Vinyl.all(order: "created_at DESC", limit: 50)
+    @vinyl = Vinyl.new
   end
 
   def new # GET /vinyls/new
@@ -24,7 +25,7 @@ class VinylsController < ApplicationController
     @vinyl.genre = lastfm.fetch_album_genre(@vinyl.artist, @vinyl.title)
 
     if @vinyl.save
-      redirect_to current_user, notice: 'Release was successfully logged.'
+      redirect_to vinyls_path, notice: 'Release was successfully logged.'
     else
       render :new
     end
