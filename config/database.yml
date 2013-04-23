@@ -1,0 +1,18 @@
+
+development:
+  adapter: postgresql
+  database: vinyls_development
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: postgresql
+  database: vinyls_test
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  database: vinyls_production
+  pool: 5
+  timeout: 5000

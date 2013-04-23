@@ -19,5 +19,3 @@ config/s3.yml
 Gemfile.lock
 
 .env
-
-config/database.yml
