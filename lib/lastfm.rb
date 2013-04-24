@@ -7,7 +7,9 @@ class Lastfm
     escaped_title = URI::escape(title)
     lastfm_key = ENV["LASTFM_KEY"]
     album_search = RestClient.get("http://ws.audioscrobbler.com/2.0/?method=album.search&album=#{escaped_title}&api_key=#{lastfm_key}&format=json")
-    results = JSON.parse(album_search).fetch('results').fetch('albummatches').fetch('album')[0].fetch('image').last.fetch('#text')
+    unless results.key?('errors')
+      results = JSON.parse(album_search).fetch('results').fetch('albummatches').fetch('album')[0].fetch('image').last.fetch('#text')
+    end
   end
 
   def fetch_album_genre(artist, title)
