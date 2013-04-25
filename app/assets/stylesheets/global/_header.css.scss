@@ -9,7 +9,7 @@ header {
   border-bottom: 1px solid white;
   
   a#logo {
-    @include span-columns(2); 
+    @include span-columns(6); 
     text-transform: uppercase;
     color: white;
     font-size: 24px;
@@ -23,18 +23,15 @@ header {
     text-align: right;
     word-wrap: none;
     white-space: nowrap;
-    @include span-columns(10);
+    @include span-columns(6);
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
-  
     a.sign-up, a.current-user {
       padding: 4px;
-      
       display: inline;
       background: $yellow;
       color: black;
     }
-
   }
 }
