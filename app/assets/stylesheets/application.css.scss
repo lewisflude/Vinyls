@@ -178,30 +178,10 @@ div.add-vinyl {
     display: block;
 
   }
-
-  form {
-    padding: 16px;
-    label { line-height: 16px; }
-    input { margin-bottom: 16px; }
-  }
-
-  div.vinyl-count {
-    display: inline-block;
-    position: relative;
-    top: 144px;
-    font-size: 12px; line-height: 24px;
-    border: 1px solid yellow;
-    padding: 4px;
-    width: 32px; height: 32px;
-    border-radius: 16px;
-    
-  }
-
+  
   @include media($mobile) {
-    width: 312px;
-    height: 312px;
-    line-height: 48px;
-    margin: 0 auto 24px auto;
+    @include span-columns(4);
+    @include shift(1);
   }
 
   text-align: center;
@@ -209,19 +189,6 @@ div.add-vinyl {
   
 }
 
-
-// Typography
-
-a {
-  color: white;
-}
-
-p.large-text {
-  text-align: center;
-  font-size: 24px;
-  line-height: 36px;
-  font-weight: 100;
-}
 
 ul.single-vinyl-list {
   list-style: none;
@@ -249,20 +216,6 @@ ul.single-vinyl-list {
   }
 }
 
-div.add-vinyl form {
-  @include fill-parent;
-  margin-left: 0;
-  input, label {
-    height: 24px;
-    line-height: 24px;
-    font-size: 12px;
-    padding: 0 4px;
-  }
-
-  input.button {
-    @include mini-button;
-  }
-}
 ul.edit-links {
   padding: 0;
   margin: 0 0 24px 0; list-style: none;

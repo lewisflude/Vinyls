@@ -35,6 +35,8 @@
   @include button;
 }
 
+// Main form styling
+
 form {
   @include span-columns(8);
   @include shift(2);
@@ -79,4 +81,31 @@ form {
     font-size: 16px;
   }
 
+}
+
+// Add vinyl form
+
+div.add-vinyl form {
+  @include fill-parent;
+  height: 100%;
+  padding: 8px; margin: 0;
+  input {
+      @include fill-parent;
+      height: 24px;
+      margin-bottom: 12px;
+  }
+  label {
+    width: auto;
+    font-size: 16px;
+    line-height: 24px;
+    height: 24px; margin: 4px 0;
+    padding: 0 4px;
+    background: yellow;
+    color: black;
+  }
+
+  input.button {
+    margin-top: 30px;
+    @include mini-button;
+  }
 }
