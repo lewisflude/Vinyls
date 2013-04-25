@@ -13,10 +13,14 @@
 
 @import "bourbon";
 @import "neat";
+@import "global/typography";
+@import "global/form";
 @import "global/header";
 
 $mobile: new-breakpoint(max-width 740px 6);
 $desktop: new-breakpoint(min-width 740px 6);
+
+$dark-grey: #222;
 
 a {
   text-decoration: none;
@@ -24,33 +28,7 @@ a {
 
 // Button Styling
 
-@mixin button($color: yellow) {
-  padding: 0 24px;
-  background: $color;
-  @include linear-gradient($color, darken($color, 10%));
-  line-height: 24px;
-  border-radius: 2px;
-  border: none;
-  color: black;
-  font-weight: 700;
-  display: inline-block;
-  cursor: pointer;
-  @include transition (all 120ms ease-in-out);
-  &:hover {
-    @include linear-gradient(lighten($color, 10%), $color);
-  }
-}
 
-@mixin mini-button($color: yellow) {
-  @include button;
-  padding: 0;
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.button {
-  @include button;
-}
 
 
 body {
@@ -268,54 +246,6 @@ ul.single-vinyl-list {
       max-width: 250px;
       max-height: 250px;
     }
-  }
-}
-
-form {
-  @include span-columns(6);
-  @include shift(3);
-  label {
-    @include fill-parent;
-  }
-  input {
-    @include fill-parent;
-    background: black;
-    color: white;
-    border: 1px solid yellow;
-  }
-  textarea {
-    @include fill-parent;
-    font-size:16px;
-    line-height: 24px;
-    padding: 24px;
-    height: 144px;
-  }
-
-  fieldset {
-    @include fill-parent;
-    border: none;
-    padding: 0; margin: 0;
-  }
-
-  label, input {
-    height: 48px;
-    
-    line-height: 48px;
-    
-    font-size: 24px;
-    
-    margin-bottom: 24px;
-  }
-
-  label {
-    display: inline-block;
-    @include fill-parent;
-    margin-bottom: 0;
-  }
-  input[type="file"] {
-    line-height: 0;
-    padding: 16px;
-    font-size: 16px;
   }
 }
 

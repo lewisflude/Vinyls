@@ -1,7 +1,5 @@
 <p class="notice"><%= notice %></p>
-
-<p class="large-text">Vinyls lets you share what you love about your favourite records. You can add up to 9 and you can see a list of only the Records you've added by clicking your username in the top right hand corner.</p>
-
+<h1>Sign up</h1>
 <%= form_for @user do |form| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
@@ -13,19 +11,14 @@
       </ul>
     </div>
   <% end %>
-  <p>
-    <%= form.label :username %><br/>
-    <%= form.text_field :username %><br/>
-  </p>
-  <p>
-    <%= form.label :email %><br/>
-    <%= form.text_field :email %><br/>
-  </p>
-  <p>
-    <%= form.label :password %><be/>
-    <%= form.password_field :password %><br/>
-  </p>
+    <%= form.label :username %>
+    <%= form.text_field :username %>
 
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+
+    <%= form.label :password %>
+    <%= form.password_field :password %>
   <%= form.submit 'Sign Up', class: 'button' %>
 <% end %>
 

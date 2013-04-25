@@ -1,0 +1,82 @@
+@mixin button($color: yellow) {
+  padding: 0 24px;
+  background: $color;
+  @include linear-gradient($color, darken($color, 10%));
+  box-shadow: 0 0 8px rgba(black, 0.2);
+  line-height: 24px;
+  border-radius: 2px;
+  border: none;
+  color: black;
+  font-weight: 700;
+  display: inline-block;
+  cursor: pointer;
+  @include transition (all 120ms ease-in-out);
+  &:hover {
+    @include linear-gradient(lighten($color, 10%), $color);
+  }
+}
+
+@mixin default-input {
+  border: none;
+  height: 48px;  
+  font-size: 24px;
+  margin-bottom: 24px;
+  padding: 8px 4px;
+}
+
+@mixin mini-button($color: yellow) {
+  @include button;
+  padding: 0;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.button {
+  @include button;
+}
+
+form {
+  @include span-columns(8);
+  @include shift(2);
+  label {
+    @include span-columns(2 of 8)
+
+  }
+  input {
+    @include default-input;
+    @include span-columns(6 of 8);
+    @include omega;
+  }
+
+  input.button {
+    @include fill-parent;
+  }
+  textarea {
+    @include fill-parent;
+    font-size:16px;
+    line-height: 24px;
+    padding: 24px;
+    height: 144px;
+  }
+
+  fieldset {
+    @include fill-parent;
+    border: none;
+    padding: 0; margin: 0;
+  }
+
+  label {
+    height: 48px;
+    line-height: 48px;
+    font-size: 24px;
+  }
+
+  
+  input[type="file"] {
+    @include fill-parent;
+    line-height: 0;
+    padding: 16px;
+    font-size: 16px;
+  }
+
+}
