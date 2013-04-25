@@ -1,0 +1,26 @@
+$mobile: new-breakpoint(max-width 740px 6);
+$desktop: new-breakpoint(min-width 740px 6);
+$yellow: #FBE500;
+$dark-grey: #222;
+
+body {
+  $visual-grid: true;
+  padding: 0; margin: 0;
+  background-color: black;
+  color: white;
+  font: {
+    family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    size: 16px/1em;
+  }
+  line-height: 24px;
+}
+div#container {
+  @include outer-container;
+  width: 740px;
+  @include media($desktop) {
+    max-width: 740px;
+  }
+  @include media($mobile) {
+    width: 480px;
+  }
+}

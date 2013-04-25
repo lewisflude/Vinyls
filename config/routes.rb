@@ -1,7 +1,5 @@
 VinylRatings::Application.routes.draw do
 
-  match 'all' => 'vinyls#index'
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
