@@ -5,10 +5,10 @@
   <% end %>
 
   <fieldset><%= form.label :title %>
-    <%= form.text_field :title %></fieldset>
-  <fieldset><%= form.label :artist %>
+    <%= form.text_field :title, :required => true %></fieldset>
+  <fieldset><%= form.label :artist, :required => true %>
     <%= form.text_field :artist %></fieldset>
-  <fieldset><%= form.label :thoughts %>
+  <fieldset><%= form.label :thoughts, :required => true %>
     <%= form.text_area :thoughts %></fieldset>
   <fieldset><%= form.label :album_art %>
     <%= form.file_field :album_art %></fieldset>
