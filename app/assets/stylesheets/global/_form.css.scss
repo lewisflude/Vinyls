@@ -92,16 +92,15 @@ div.add-vinyl form {
   input {
       @include fill-parent;
       height: 24px;
+      font-size: 12px;
       margin-bottom: 12px;
   }
   label {
     width: auto;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 24px;
     height: 24px; margin: 4px 0;
     padding: 0 4px;
-    background: yellow;
-    color: black;
   }
 
   input.button {
