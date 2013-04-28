@@ -1,5 +1,5 @@
 @mixin button($color: $yellow) {
-  padding: 0 24px;
+  padding: 0 8px;
   background: $color;
   text-transform: uppercase;
   @include linear-gradient($color, darken($color, 10%));
@@ -15,6 +15,7 @@
   &:hover {
     @include linear-gradient(lighten($color, 10%), $color);
   }
+  a { color: black; }
 }
 
 @mixin default-input {
@@ -22,7 +23,7 @@
   height: 48px;  
   font-size: 24px;
   margin-bottom: 24px;
-  padding: 8px 4px;
+  padding: 8px;
 }
 
 @mixin mini-button($color: $yellow) {
@@ -60,7 +61,7 @@ form {
     margin-bottom: 24px;
     font-size:16px;
     line-height: 24px;
-    padding: 24px;
+    padding: 8px;
     height: 144px;
   }
 

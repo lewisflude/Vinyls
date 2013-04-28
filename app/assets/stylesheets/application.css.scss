@@ -19,10 +19,12 @@
 @import "global/header";
 @import "global/albums";
 
-
-
-
-.username {
+.username-header {
+  @include fill-parent;
+  background: black;
+  font-weight: 100;
+  border-bottom: 1px solid $yellow;
+  a { color: $yellow; }
   padding: 4px;
   margin-bottom: 24px;
   font-size: 14px;
@@ -30,53 +32,9 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   display: inline-block;
-  background: $yellow;
-  a { 
-
-    color: black; 
-  }
-}
-.username-header {
-  @include fill-parent;
-  background: black;
-  font-weight: 100;
-  border-bottom: 1px solid $yellow;
-  a { color: $yellow; }
 }
 
 
 
 
-ul.single-album-list {
-  list-style: none;
-  padding: 0;
-  
-  li {
-    margin-bottom: 24px;
-    &.artist {
-      font-size: 48px;
-      line-height: 48px;
-    }
-    &.title {
-      font-size: 24px;
-      line-height: 24px;
-    }
-    &.thoughts {
-      padding: 24px;
-      background: white;
-      color: black;
-    }
-    img {
-      max-width: 250px;
-      max-height: 250px;
-    }
-  }
-}
 
-ul.edit-links {
-  padding: 0;
-  margin: 0 0 24px 0; list-style: none;
-  li {
-    display: inline-block;
-  }
-}

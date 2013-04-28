@@ -29,11 +29,7 @@ header {
     text-transform: uppercase;
   
     a.sign-up, a.current-user {
-      padding: 4px;
-      
-      display: inline;
-      background: $yellow;
-      color: black;
+      @include button;
     }
 
   }
