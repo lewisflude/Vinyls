@@ -6,7 +6,9 @@
   <li class="artist"><%= @selection.album.artist %></li>
   <li class="title"><%= @selection.album.title %></li>
   <li class="username"><%= link_to @selection.user.username, @selection.user %></li>
-  <li class="thoughts"><%= @selection.description %></li>
+  <% if @selection.description %>
+    <li class="thoughts"><%= @selection.description %></li>
+  <% end %>
   <li><%= image_tag @selection.album.album_art.url %></li>
 </ul>
 

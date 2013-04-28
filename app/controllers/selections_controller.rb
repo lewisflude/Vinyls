@@ -33,7 +33,7 @@ class SelectionsController < ApplicationController
 
   def update
     @selection = Selection.find(params[:id])
-    @selection.user_id = current_user.id
+    @selection.update_attributes(description: params[:description])
     if @selection.update_attributes(params[:selection])
       redirect_to @selection, notice: 'Selection was successfully updated.'
     else

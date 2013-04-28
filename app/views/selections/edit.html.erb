@@ -1,16 +1,7 @@
-<%= form_for @album, html: { multipart: true } do |form| %>
+<%= form_tag selection_path, method: 'put' do %>
+    
+  <%= label_tag :description %>
+  <%= text_area_tag :description %>
+  <%= submit_tag "Edit Record", class: 'button' %>
 
-  <fieldset><%= form.label :title %>
-    <%= form.text_field :title %></fieldset>
-  <fieldset><%= form.label :artist %>
-    <%= form.text_field :artist %></fieldset>
-  <fieldset><%= form.label :genre%>
-    <%= form.text_field :genre %></fieldset>
-  <fieldset><%= form.label :thoughts%>
-    <%= form.text_area :thoughts %></fieldset>
-  <fieldset><%= form.label :album_art %>
-    <%= form.file_field :album_art %></fieldset>
-  <%= form.submit 'Edit Record', class: "button" %>
 <% end %>
-
-<%= link_to "Back to Main", albums_path, class: "back-to-main" %>
