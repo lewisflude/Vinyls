@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130428183635) do
+ActiveRecord::Schema.define(:version => 20130428213411) do
 
   create_table "albums", :force => true do |t|
     t.string   "title"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(:version => 20130428183635) do
     t.string   "album_art_content_type"
     t.integer  "album_art_file_size"
     t.datetime "album_art_updated_at"
-    t.string   "thoughts"
   end
 
   create_table "selections", :force => true do |t|

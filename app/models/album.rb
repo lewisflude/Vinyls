@@ -1,6 +1,6 @@
 class Album < ActiveRecord::Base
 
-  attr_accessible :title, :artist, :genre, :thoughts, :album_art
+  attr_accessible :title, :artist, :genre, :album_art
 
   has_many :selections
   has_many :users, through: :selections
@@ -16,7 +16,7 @@ class Album < ActiveRecord::Base
     path: ":hash",
     hash_secret: "492091f930411ba79c07d4e434226267f55f4626b3603e9f912539c03a750888bbec9ddf046b550efea9f74cfe3fa9ed8fd4ab87ce5b1378250fd89f8c704fb1"
 
-  validates_presence_of :title, :artist, :thoughts
+  validates_presence_of :title, :artist
   validates_attachment_size :album_art, :less_than => 10.megabytes
 
   belongs_to :user
