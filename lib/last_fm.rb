@@ -26,3 +26,4 @@ class LastFm
     end
   end
 end
+
