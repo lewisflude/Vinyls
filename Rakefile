@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-VinylRatings::Application.load_tasks
+Vinyls::Application.load_tasks

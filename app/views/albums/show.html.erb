@@ -1,0 +1,21 @@
+<p class="notice"><%= notice %></p>
+
+<%= link_to 'Back to List', root_path, class: "button" %>
+
+<ul class="single-album-list">
+  <li class="artist"><%= @album.artist %></li>
+  <li class="title"><%= @album.title %></li>
+  <li class="username"><%= link_to @album.user.username, @album.user %></li>
+  <li class="thoughts"><%= @album.thoughts %></li>
+  <li><%= image_tag @album.album_art.url %></li>
+</ul>
+
+<% if current_user %>
+  <% if current_user.id == @album.user_id %>
+    <ul class="edit-links">
+      <li><%= link_to "Edit", edit_album_path, class: "button secondary" %></li>
+      <li><%= link_to 'Destroy', { action: :destroy, id: @album.id }, method: :delete, data: { confirm: 'Are you sure?' }, class: "button caution" %></li>
+    </ul>
+  <% end %>
+<% end %>
+

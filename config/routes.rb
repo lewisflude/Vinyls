@@ -1,4 +1,4 @@
-VinylRatings::Application.routes.draw do
+Vinyls::Application.routes.draw do
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -11,7 +11,7 @@ VinylRatings::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
-  resources :vinyls
+  resources :albums
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -54,7 +54,7 @@ VinylRatings::Application.routes.draw do
 
   # get "/:username", to: "users#show"
 
-  root :to => 'vinyls#index'
+  root :to => 'albums#index'
 
   get '/sign_in' => 'clearance/sessions#new', as: 'sign_in'
   get '/sign_up' => 'clearance/users#new', as: 'sign_up'

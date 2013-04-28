@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130419224337) do
+ActiveRecord::Schema.define(:version => 20130428125032) do
+
+  create_table "albums", :force => true do |t|
+    t.string   "title"
+    t.string   "artist"
+    t.string   "genre"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.integer  "user_id"
+    t.string   "album_art_file_name"
+    t.string   "album_art_content_type"
+    t.integer  "album_art_file_size"
+    t.datetime "album_art_updated_at"
+    t.string   "thoughts"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email"
@@ -25,19 +39,5 @@ ActiveRecord::Schema.define(:version => 20130419224337) do
 
   add_index "users", ["email"], :name => "index_users_on_email"
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
-
-  create_table "vinyls", :force => true do |t|
-    t.string   "title"
-    t.string   "artist"
-    t.string   "genre"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
-    t.integer  "user_id"
-    t.string   "album_art_file_name"
-    t.string   "album_art_content_type"
-    t.integer  "album_art_file_size"
-    t.datetime "album_art_updated_at"
-    t.string   "thoughts"
-  end
 
 end

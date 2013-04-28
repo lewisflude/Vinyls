@@ -1,19 +1,18 @@
-<% if signed_in? && @user == current_user %>
+
+<% if current_user %>
   <% if current_user.albums.count < 9 %>
     <div class="add-album">
       <%= link_to '', new_album_path %>
     </div>
   <% end %>
-
 <% else %>
-
-<div class="username username-header">
-  <%= link_to @user.username, @user %>
-</div>
-<span>
+  <div class="add-album">
+    <%= link_to '', sign_up_path, class: "add-album" %>
+  </div>
 <% end %>
 
-<% @user.albums.each do |album| %>
+
+<% @albums.each do |album| %>
   <%= link_to album, class: "album-container" do %>
     <ul class="album-list">
       <li class="artist"><%= album.artist %></li>
@@ -22,8 +21,4 @@
     <%= image_tag album.album_art.url(:medium), class: "album-art" %>
   <% end %>
 <% end %>
-
-
-
-
 

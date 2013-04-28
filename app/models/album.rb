@@ -1,4 +1,4 @@
-class Vinyl < ActiveRecord::Base
+class Album < ActiveRecord::Base
 
   attr_accessible :title, :artist, :genre, :thoughts, :album_art
   
