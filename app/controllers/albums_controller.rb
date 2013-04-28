@@ -17,9 +17,7 @@ class AlbumsController < ApplicationController
 
     lastfm = LastFm.new
 
-    @album.album_art = open(lastfm.fetch_album_art(@album.title))
-
-    @album.genre = lastfm.fetch_album_genre(@album.artist, @album.title)
+    @album.album_art = open(lastfm.fetch_album_art(@album.artist, @album.title))
 
     if @album.save
       redirect_to albums_path, notice: 'Release was successfully logged.'
