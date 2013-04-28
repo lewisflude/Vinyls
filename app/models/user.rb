@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :albums, order: 'created_at DESC'
 
   validates_each :albums do |user, attr, value|
-    user.errors.add :base, "Can't add more than 9 albums. Remove one?" if user.vinyls.size >= 9
+    user.errors.add :base, "Can't add more than 9 albums. Remove one?" if user.albums.size >= 9
   end
 
   def to_param
