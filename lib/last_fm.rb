@@ -1,7 +1,6 @@
 require 'open-uri'
 require 'rest_client'
 require 'json'
-require 'pry'
 
 class LastFm
  

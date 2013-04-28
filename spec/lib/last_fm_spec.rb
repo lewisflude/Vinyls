@@ -1,5 +1,4 @@
 require './lib/last_fm'
-require 'pry'
 module RestClient; end
 module JSON; end
 
