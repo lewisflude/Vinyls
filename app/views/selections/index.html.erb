@@ -1,0 +1,24 @@
+
+<% if current_user %>
+  <% if current_user.selections.count < 9 %>
+    <div class="add-album">
+      <%= link_to '', new_selection_path %>
+    </div>
+  <% end %>
+<% else %>
+  <div class="add-album">
+    <%= link_to '', sign_up_path, class: "add-album" %>
+  </div>
+<% end %>
+
+
+<% @selections.each do |selection| %>
+  <%= link_to selection, class: "album-container" do %>
+    <ul class="album-list">
+      <li class="artist"><%= selection.album.artist %></li>
+      <li class="title"><%= selection.album.title %></li>
+    </ul>
+    <%= image_tag selection.album.album_art.url(:medium), class: "album-art" %>
+  <% end %>
+<% end %>
+

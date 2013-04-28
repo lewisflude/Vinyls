@@ -11,7 +11,7 @@ Vinyls::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
-  resources :albums
+  resources :selections
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -54,7 +54,7 @@ Vinyls::Application.routes.draw do
 
   # get "/:username", to: "users#show"
 
-  root :to => 'albums#index'
+  root :to => 'selections#index'
 
   get '/sign_in' => 'clearance/sessions#new', as: 'sign_in'
   get '/sign_up' => 'clearance/users#new', as: 'sign_up'

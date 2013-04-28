@@ -1,0 +1,9 @@
+<%= form_tag selections_path, method: 'post' do %>
+  <%= text_field_tag :title %>
+  <%= text_field_tag :artist %>
+  <%= text_field_tag :description %>
+  <%= submit_tag "Add a Record", class: 'button' %>
+
+
+
+<% end %>
