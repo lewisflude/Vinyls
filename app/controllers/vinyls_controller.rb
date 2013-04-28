@@ -1,3 +1,4 @@
+require './lib/last_fm'
 class VinylsController < ApplicationController
 
   def index # GET /vinyls
@@ -10,15 +11,11 @@ class VinylsController < ApplicationController
   end
 
   def create # POST /vinyls
-    
-    require 'lastfm'
-    require 'open-uri'
-
     @vinyl = current_user.vinyls.build(params[:vinyl]) 
 
     # Fetch album_art from Last.fm
 
-    lastfm = Lastfm.new
+    lastfm = LastFm.new
 
     @vinyl.album_art = open(lastfm.fetch_album_art(@vinyl.title))
 

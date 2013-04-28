@@ -16,7 +16,12 @@ gem 'aws-sdk'
 
 group :development do
  gem 'awesome_print', require: 'awesome_print'
+ gem 'rspec-rails'
+end
 
+group :development, :test do
+  gem 'pry'
+  gem 'pry-rails'
 end
 
 # Gems used only for assets and not required
