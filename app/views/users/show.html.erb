@@ -1,7 +1,7 @@
 <% if signed_in? && @user == current_user %>
-  <% if current_user.albums.count < 9 %>
+  <% if current_user.selections.count < 9 %>
     <div class="add-album">
-      <%= link_to '', new_album_path %>
+      <%= link_to '', new_selection_path %>
     </div>
   <% end %>
 
@@ -13,13 +13,13 @@
 <span>
 <% end %>
 
-<% @user.albums.each do |album| %>
-  <%= link_to album, class: "album-container" do %>
+<% @selections.each do |selection| %>
+  <%= link_to selection, class: "album-container" do %>
     <ul class="album-list">
-      <li class="artist"><%= album.artist %></li>
-      <li class="title"><%= album.title %></li>
+      <li class="artist"><%= selection.album.artist %></li>
+      <li class="title"><%= selection.album.title %></li>
     </ul>
-    <%= image_tag album.album_art.url(:medium), class: "album-art" %>
+    <%= image_tag selection.album.album_art.url(:medium), class: "album-art" %>
   <% end %>
 <% end %>
 
