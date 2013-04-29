@@ -19,7 +19,7 @@ a.album-container {
   }
   ul.album-list {
     @include media($desktop) { width: 223px; height: 223px; }
-    @include media($mobile) { width: 312px; height: 312px; }
+    @include media($mobile) { width: 313px; height: 312px; }
     display: block;  
     padding: 24px; margin: 0;
     list-style: none;
