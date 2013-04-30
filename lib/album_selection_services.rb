@@ -1,6 +1,5 @@
 class AlbumSelectionServices
 
-
   def self.select_album(user, artist, title)
 
     album = Album.where(artist: artist, title: title).first

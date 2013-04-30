@@ -20,10 +20,10 @@ a.album-container {
     z-index: -1;
   }
   ul.album-list {
-    @include media($desktop) { width: 223px; height: 223px; }
+    @include media($desktop) { width: 290px; height: 290px; }
     @include media($mobile) { width: 313px; height: 312px; }
     display: block;  
-    padding: 24px; margin: 0;
+    padding: 48px; margin: 0;
     list-style: none;
     position: absolute;
     top: 0; left: 0;
@@ -58,7 +58,7 @@ div.add-album {
   text-transform: uppercase;
   margin-bottom: 24px;
   border: 8px solid $yellow;
-  width: 223px; height: 223px;
+  width: 290px; height: 290px;
   @include media($mobile) {
     @include span-columns(4);
     @include shift(1);

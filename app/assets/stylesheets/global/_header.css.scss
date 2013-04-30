@@ -9,7 +9,7 @@ header {
   border-bottom: 1px solid $white;
 
   text-transform: uppercase;
-  
+
   a#logo {
     @include span-columns(2); 
     color: $white;
@@ -29,8 +29,6 @@ header {
     word-wrap: none;
     $white-space: nowrap;
     @include span-columns(10);
-    font-size: 14px;
-
     ul {
       list-style: none;
       padding: 0;
