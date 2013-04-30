@@ -25,12 +25,13 @@ a.album-container {
     list-style: none;
     position: absolute;
     top: 0; left: 0;
-    background: rgba(black, 0.8);
+    background: black;
+    border: 8px solid yellow;
     opacity: 0;
     text-transform: uppercase;
     @include transition (all 120ms ease-in-out);
     &:hover {
-      opacity: 1;
+      opacity: 0.8;
     }
 
     li.artist {
