@@ -11,14 +11,15 @@
   <header>
     <%= link_to "Vinyls", root_path, id: "logo" %>
     <nav>
-      <% if signed_in? %>
-        
-        Logged in as <%= link_to current_user.username, user_path(current_user), class: "current-user" %>
-        <%= link_to "Sign out", sign_out_path, method: "delete" %>
-      <% else %>
-        <%= link_to "Join Vinyls", join_path, class: "sign-up" %> or
-        <%= link_to "Sign in", sign_in_path %>
-      <% end %>
+      <ul>
+        <% if signed_in? %>
+          <li>Logged in as <%= link_to current_user.username, user_path(current_user), class: 'current-user' %></li>
+          <li><%= link_to "Sign out", sign_out_path, method: "delete" %></li>
+        <% else %>
+          <li><%= link_to "Sign in", sign_in_path %></li>
+          <li><%= link_to "Join Vinyls", join_path %></li>
+        <% end %>
+      </ul>
 
     </nav>
   </header>
@@ -30,9 +31,6 @@
     <%= yield %>
 
   </div>
-
-  <script type="text/javascript" src="//use.typekit.net/knl3rrp.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

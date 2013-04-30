@@ -1,13 +1,13 @@
 @mixin button($color: $yellow) {
   padding: 0 8px;
   background: $color;
-  text-transform: uppercase;
   @include linear-gradient($color, darken($color, 10%));
   box-shadow: 0 0 8px rgba(black, 0.2);
   line-height: 24px;
   border-radius: 2px;
   border: none;
   color: black;
+  font-family: inherit;
   font-weight: 700;
   display: inline-block;
   cursor: pointer;
