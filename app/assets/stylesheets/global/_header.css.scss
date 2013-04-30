@@ -18,8 +18,10 @@ header {
     font-weight: 300;
     padding-left: 60px;
     letter-spacing: 2px;
-    
     background: url('vinyls-logo-48.png') no-repeat;
+    &:hover { 
+      color: $yellow; border: none;
+    }
   }
   
   nav {
