@@ -20,7 +20,7 @@ header {
     letter-spacing: 2px;
     background: url('vinyls-logo-48.png') no-repeat;
     &:hover { 
-      color: $yellow; border: none;
+      color: $yellow;
     }
   }
   
@@ -42,6 +42,9 @@ header {
           border-left: 1px solid $white;
           margin-left: 4px;
           padding-left: 8px;
+        }
+        a:hover {
+          border-bottom: 1px solid $white;
         }
       }
     }

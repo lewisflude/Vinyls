@@ -3,9 +3,6 @@ a.album-container {
   margin-bottom: 24px;  
   color: $white;
 
-  &:hover {
-    border: none;
-  }
   @include media($desktop) {
     @include span-columns(2);
     @include omega(3n);

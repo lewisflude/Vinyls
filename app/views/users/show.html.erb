@@ -1,16 +1,15 @@
+<div class="username-header">
+  <%= link_to @user.username, @user %>
+</div>
+
+<span>
 <% if signed_in? && @user == current_user %>
   <% if current_user.selections.count < 9 %>
+  
     <div class="add-album">
       <%= link_to '', new_selection_path %>
     </div>
   <% end %>
-
-<% else %>
-
-<div class="username-header">
-  <%= link_to @user.username, @user %>
-</div>
-<span>
 <% end %>
 
 <% @selections.each do |selection| %>

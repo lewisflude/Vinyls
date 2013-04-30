@@ -65,11 +65,10 @@ h3, h4, h5, h6 {
 a {
   color: $yellow;
   text-decoration: none;
-  &:hover {
-    border-bottom: 1px solid $white;
-  }
 }
-
+p a:hover {
+  border-bottom: 1px solid $white;
+}
 p.large-text {
   text-align: center;
   font-size: 24px;
