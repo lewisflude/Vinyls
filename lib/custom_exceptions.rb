@@ -1,0 +1,3 @@
+def AlbumNotFoundException > Exception
+
+end
