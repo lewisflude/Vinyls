@@ -1,5 +1,7 @@
 class Album < ActiveRecord::Base
 
+  S3_CREDENTIALS = { :access_key_id => ENV['S3_KEY'], :secret_access_key => ENV['S3_SECRET'], :bucket => "vinyls-app"}
+
   attr_accessible :title, :artist, :genre, :album_art
 
   has_many :selections

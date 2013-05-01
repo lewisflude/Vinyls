@@ -1,17 +1,3 @@
-
-<% if current_user %>
-  <% if current_user.selections.count < 9 %>
-    <div class="add-album">
-      <%= link_to '', new_selection_path %>
-    </div>
-  <% end %>
-<% else %>
-  <div class="add-album">
-    <%= link_to '', join_path, class: "add-album" %>
-  </div>
-<% end %>
-
-
 <% @selections.each do |selection| %>
   <%= link_to selection, class: "album-container" do %>
     <ul class="album-list">
