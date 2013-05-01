@@ -1,4 +1,7 @@
 a.album-container {
+
+  @include link-reset;
+
   text-align: center;
   margin-bottom: 24px;  
   color: $white;
@@ -16,21 +19,27 @@ a.album-container {
     display: inline-block;
     width: 100%; height: 100%;
     margin: 0 auto;    
-    box-shadow: 0 0 8px rgba(black, 0.2);
+    box-shadow: 0 0 8px rgba(black, 0.5);
     z-index: -1;
   }
   ul.album-list {
     @include media($desktop) { width: 290px; height: 290px; }
     @include media($mobile) { width: 313px; height: 312px; }
     display: block;  
+
+    // List Style Overwrites
+
     padding: 48px; margin: 0;
     list-style: none;
     position: absolute;
+
     top: 0; left: 0;
     background: rgba(black, 0.75);
     opacity: 0;
     text-transform: uppercase;
+
     @include transition (all 120ms ease-in-out);
+
     &:hover {
       opacity: 1;
     }
@@ -38,6 +47,7 @@ a.album-container {
     li.artist {
       font-size: 24px;
       line-height: 24px;
+      font-weight: 700;
       letter-spacing: 2px;
       margin-bottom: 12px;
     }
@@ -92,6 +102,7 @@ ul.single-album-list {
     &.artist {
       font-size: 48px;
       line-height: 48px;
+      font-weight: 700;
     }
     &.title {
       font-size: 24px;

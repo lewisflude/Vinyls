@@ -46,6 +46,7 @@ body {
   font: {
     family: 'Proxima Nova';
     size: 16px;
+    weight: 300;
   }
   line-height: 24px;
 }
@@ -62,13 +63,24 @@ h3, h4, h5, h6 {
   margin-bottom: 24px;
 }
 
-a {
+@mixin default-link {
   color: $yellow;
   text-decoration: none;
+  &:hover {
+    border-bottom: 1px solid $yellow;
+  }
 }
-p a:hover {
-  border-bottom: 1px solid $white;
+
+@mixin link-reset {
+  &:hover {
+    border: none;
+  }
 }
+
+a {
+  @include default-link;
+}
+
 p.large-text {
   text-align: center;
   font-size: 24px;

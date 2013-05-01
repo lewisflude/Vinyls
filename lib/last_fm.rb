@@ -14,6 +14,5 @@ class LastFm
       result = value.fetch('album').fetch('image')[3].fetch('#text')
     end
   end
-
 end
 

@@ -1,3 +1,14 @@
+<div class='username-header'>Selected by <%= link_to @selection.user.username, @selection.user %></div>
+
+<ul class='single-album-list'>
+  <li class="artist"><%= @selection.album.artist %></li>
+  <li class="title"><%= @selection.album.title %></li>
+  <li><%= image_tag @selection.album.album_art.url %></li>  
+  <% if @selection.description %>
+    <li class="description"><%= @selection.description %></li>
+  <% end %>
+</ul>
+
 <% if current_user %>
   <% if current_user.id == @selection.user_id %>
     <ul class="edit-links">
@@ -9,17 +20,6 @@
     <%= link_to 'Back to List', root_path, class: "button" %>
   <% end %>
 <% end %>
-
-<ul class="single-album-list">
-  <li class="username-header"><%= link_to @selection.user.username, @selection.user %></li>
-  <li class="artist"><%= @selection.album.artist %></li>
-  <li class="title"><%= @selection.album.title %></li>
-  <li><%= image_tag @selection.album.album_art.url %></li>  
-  <% if @selection.description %>
-    <li class="description"><%= @selection.description %></li>
-  <% end %>
-</ul>
-
 
 
 
