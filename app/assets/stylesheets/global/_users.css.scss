@@ -1,0 +1,9 @@
+.username-header {
+  @include fill-parent;
+  background: black;
+  border-bottom: 1px solid $yellow;
+  a { color: $yellow; }
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
