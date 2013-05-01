@@ -1,3 +1,4 @@
+<p><%= flash[:error] %></p>
 <%= form_tag selections_path, method: 'post' do %>
   <%= label_tag :title %>
   <%= text_field_tag :title %>

@@ -14,12 +14,10 @@ class SelectionsController < ApplicationController
   def create
     artist = params[:artist]
     title = params[:title]
-    @selection = AlbumSelectionServices.select_album(current_user, artist, title)
-
-    if @selection.save
-      redirect_to selections_path, notice: 'Release was successfully logged.'
-    else
-      render :new
+    begin
+      @selection = AlbumSelectionServices.select_album(current_user, artist, title)
+    rescue Exception
+      redirect_to new_selection_path, :flash => { error: "Album not found" }
     end
   end
 
