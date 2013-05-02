@@ -1,4 +1,17 @@
-a.album-container {
+ul.album-list {
+  width: 750px;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  li {
+    float: left;
+    width: 250px;
+    height: 250px;
+    position: relative;
+
+  }
+}
+a.album {
 
   @include link-reset;
 
@@ -6,30 +19,20 @@ a.album-container {
   margin-bottom: 24px;  
   color: $white;
 
-  @include media($desktop) {
-    @include span-columns(2);
-    @include omega(3n);
-  }
-  @include media($mobile) {
-    @include span-columns(4);
-    @include shift(1);
-  }
-  position: relative;
   img.album-art {
     display: inline-block;
     width: 100%; height: 100%;
     margin: 0 auto;    
-    box-shadow: 0 0 8px rgba(black, 0.5);
     z-index: -1;
   }
-  ul.album-list {
-    @include media($desktop) { width: 290px; height: 290px; }
-    @include media($mobile) { width: 313px; height: 312px; }
+  .album-info {
+
     display: block;  
+    width: 100%; height: 100%;
 
     // List Style Overwrites
 
-    padding: 48px; margin: 0;
+    padding: 24px; margin: 0;
     list-style: none;
     position: absolute;
 
@@ -44,21 +47,22 @@ a.album-container {
       opacity: 1;
     }
 
-    li.artist {
+    .album-artist, .album-title {
+      display: block;
+    }
+
+    .album-artist {
       font-size: 24px;
       line-height: 24px;
       font-weight: 700;
       letter-spacing: 2px;
       margin-bottom: 12px;
     }
-    li.title {
+    .album-title {
       font-size: 16px;
       letter-spacing: 2px;
       font-weight: 100;
     }
-
-
-
   }
 }
 
@@ -68,16 +72,7 @@ div.add-album {
   text-transform: uppercase;
   margin-bottom: 24px;
   border: 8px solid $yellow;
-  width: 290px; height: 290px;
-  @include media($mobile) {
-    @include span-columns(4);
-    @include shift(1);
-    height: 313px;
-  }
-  @include media($desktop) {
-    @include span-columns(2);
-    @include omega(3n);
-  }
+  width: 250px; height: 250px;
   a {
     background: url("vinyls-logo-96.png") center no-repeat;
     display: block; position: absolute;

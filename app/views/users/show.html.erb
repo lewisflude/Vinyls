@@ -1,23 +1,26 @@
-<% if signed_in? && @user == current_user %>
-  <% if current_user.selections.count < 9 %>
-  
-    <div class="add-album">
-      <%= link_to '', new_selection_path %>
-    </div>
+
+<ul class='album-list'>
+  <li>
+    <% if signed_in? && @user == current_user %>
+      <% if current_user.selections.count < 9 %>
+      
+        <div class="add-album">
+          <%= link_to '', new_selection_path %>
+        </div>
+      <% end %>
+    <% end %>
+  </li>
+  <% @selections.each do |selection| %>
+    <li>
+      <%= link_to selection, class: "album" do %>
+        <div class="album-info">
+          <span class="album-artist"><%= selection.album.artist %></span>
+          <span class="album-title"><%= selection.album.title %></span>
+        </div>
+        <%= image_tag selection.album.album_art.url(:medium), class: "album-art" %>
+      <% end %>
+    </li>
   <% end %>
-<% end %>
-
-<% @selections.each do |selection| %>
-  <%= link_to selection, class: "album-container" do %>
-    <ul class="album-list">
-      <li class="artist"><%= selection.album.artist %></li>
-      <li class="title"><%= selection.album.title %></li>
-    </ul>
-    <%= image_tag selection.album.album_art.url(:medium), class: "album-art" %>
-  <% end %>
-<% end %>
-
-
-
+</ul>
 
 

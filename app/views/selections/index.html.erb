@@ -1,10 +1,13 @@
-<% @selections.each do |selection| %>
-  <%= link_to selection, class: "album-container" do %>
-    <ul class="album-list">
-      <li class="artist"><%= selection.album.artist %></li>
-      <li class="title"><%= selection.album.title %></li>
-    </ul>
-    <%= image_tag selection.album.album_art.url(:medium), class: "album-art" %>
+<ul class='album-list'>
+  <% @selections.each do |selection| %>
+    <li>
+      <%= link_to selection, class: "album" do %>
+        <div class="album-info">
+          <span class="album-artist"><%= selection.album.artist %></span>
+          <span class="album-title"><%= selection.album.title %></span>
+        </div>
+        <%= image_tag selection.album.album_art.url(:medium), class: "album-art" %>
+      <% end %>
+    </li>
   <% end %>
-<% end %>
-
+</ul>
