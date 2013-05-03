@@ -1,3 +1,16 @@
-<h1>Album Logged!</h1>
+<h1>Selection Logged!</h1>
 
-<%= @selection.album.title %>
+<div class='username-header'>Selected by <%= link_to @selection.user.username, @selection.user %></div>
+
+<ul class='single-album-list'>
+  <li class="artist"><%= @selection.album.artist %></li>
+  <li class="title"><%= @selection.album.title %></li>
+  <li><%= image_tag @selection.album.album_art.url %></li>  
+  <% if @selection.description %>
+    <li class="description"><%= @selection.description %></li>
+  <% end %>
+</ul>
+
+
+
+

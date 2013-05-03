@@ -1,7 +1,7 @@
 <ul class='album-list'>
   <% @selections.each do |selection| %>
     <li>
-      <%= link_to selection, class: "album" do %>
+      <%= link_to selection.user, class: "album" do %>
         <div class="album-info">
           <span class="album-artist"><%= selection.album.artist %></span>
           <span class="album-title"><%= selection.album.title %></span>

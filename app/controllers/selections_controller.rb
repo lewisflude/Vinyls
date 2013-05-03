@@ -16,6 +16,7 @@ class SelectionsController < ApplicationController
     title = params[:title]
     begin
       @selection = AlbumSelectionServices.select_album(current_user, artist, title)
+      redirect_to current_user, flash: { notice: "Selection added" }
     rescue Exception
       redirect_to new_selection_path, :flash => { error: "Album not found" }
     end
@@ -43,7 +44,7 @@ class SelectionsController < ApplicationController
     @selection = Selection.find(params[:id])
     @selection.destroy
 
-    redirect_to action: :index
+    redirect_to current_user, flash: { notice: "Selection removed" }
   end
 
 end
