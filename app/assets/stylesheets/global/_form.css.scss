@@ -1,4 +1,5 @@
 @mixin button($color: $yellow) {
+  @include link-reset;
   padding: 0 8px;
   background: $color;
   @include linear-gradient($color, darken($color, 10%));
