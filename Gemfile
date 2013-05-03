@@ -22,6 +22,7 @@ end
 group :development, :test do
   gem 'pry'
   gem 'pry-rails'
+  gem 'pry-remote'
 end
 
 # Gems used only for assets and not required
@@ -42,7 +43,7 @@ gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 
-gem 'bcrypt-ruby', '~> 3.0.0', :require => "bcrypt"
+gem 'bcrypt-ruby', '~> 3.0.0', require: "bcrypt"
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

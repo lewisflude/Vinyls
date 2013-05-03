@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   attr_accessible :username, :remember_token
   validates_format_of :username, with: /\A[a-z0-9_-]{2,19}\Z/i
 
-  has_many :selections
+  has_many :selections, limit: 9
   has_many :albums, through: :selections, order: 'created_at DESC'
 
   validates_each :albums do |user, attr, value|

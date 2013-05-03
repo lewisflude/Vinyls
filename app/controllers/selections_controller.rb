@@ -18,7 +18,9 @@ class SelectionsController < ApplicationController
       @selection = AlbumSelectionServices.select_album(current_user, artist, title)
       redirect_to current_user, flash: { notice: "Selection added" }
     rescue AlbumNotFoundException
-      redirect_to new_selection_path, :flash => { error: "Album not found" }
+      redirect_to new_selection_path, :flash => { error: "Album not found on Last.fm" }
+    rescue AlbumArtNotFoundException
+      redirect_to new_selection_path, :flash => { error: "Album art not found on Last.fm" }
     end
   end
 

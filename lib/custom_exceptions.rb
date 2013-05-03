@@ -1,3 +1,7 @@
-def AlbumNotFoundException > Exception
+class AlbumNotFoundException < Exception
+
+end
+
+class AlbumArtNotFoundException < Exception
 
 end

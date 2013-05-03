@@ -7,9 +7,11 @@ class AlbumSelectionServices
   def self.find_or_create_album(artist, title)
     # returns either an album or an error
     album = Album.where(artist: artist, title: title).first
+
     return album if album
     
-    album_art = LastFm.fetch_album_art(artist, title)
-    Album.create(artist: artist, title: title, album_art: album_art)
+    album_info = LastFm.fetch(artist, title)
+
+    Album.create(artist: album_info['artist'], title: album_info['title'], album_art: album_info['album_art'])
   end
 end

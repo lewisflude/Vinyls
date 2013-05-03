@@ -25,16 +25,21 @@ div#container {
   }
 }
 
-.notice {
+.notice, .error {
   @include fill-parent;
-  background: $yellow;
   line-height: 48px;
   font-size: 24px;
   text-align: center;
+}
+
+.notice {
+  background: $yellow;
   color: black;
-  a {
-    color: black;
-  }
+  a { color: black; }
+}
+
+.error {
+  background: red;
 }
 // Sorry TypeKit
 img.typekit-badge { display: none !important; }
