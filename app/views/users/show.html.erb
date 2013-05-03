@@ -1,15 +1,14 @@
 
 <ul class='album-list'>
-  <li>
-    <% if signed_in? && @user == current_user %>
-      <% if current_user.selections.count < 9 %>
-      
+  <% if signed_in? && @user == current_user %>
+    <% if current_user.selections.count < 9 %>
+      <li>      
         <div class="add-album">
           <%= link_to '', new_selection_path %>
         </div>
-      <% end %>
+      </li>
     <% end %>
-  </li>
+  <% end %>
   <% @selections.each do |selection| %>
     <li>
       <%= link_to selection, class: "album" do %>
