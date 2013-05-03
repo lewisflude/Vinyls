@@ -1,22 +1,22 @@
 <h1>Sign in</h1>
 
 <%= form_for :session, :url => session_path do |form| %>
-  <div class='text-field'>
+  <fieldset>
     <%= form.label :email %>
     <%= form.text_field :email, :type => 'email' %>
-  </div>
+  </fieldset>
 
-  <div class='password-field'>
+  <fieldset>
     <%= form.label :password %>
     <%= form.password_field :password %>
-  </div>
+  </fieldset>
 
-  <div class='submit-field'>
+  <fieldset>
     <%= form.submit 'Sign in', class: 'button' %>
-  </div>
+  </fieldset>
 
-  <div class='other-links'>
+  <fieldset>
     <%= link_to t('.sign_up'), join_path, class: 'button' %>
     <%= link_to t('.forgot_password'), new_password_path %>
-  </div>
+  </fieldset>
 <% end %>

@@ -17,7 +17,7 @@ class SelectionsController < ApplicationController
     begin
       @selection = AlbumSelectionServices.select_album(current_user, artist, title)
       redirect_to current_user, flash: { notice: "Selection added" }
-    rescue Exception
+    rescue AlbumNotFoundException
       redirect_to new_selection_path, :flash => { error: "Album not found" }
     end
   end
