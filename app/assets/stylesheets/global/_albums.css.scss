@@ -2,8 +2,16 @@ ul.album-list {
   @include fill-parent;
   list-style: none;
   li {
-    @include span-columns(4);
-    @include omega(3n);
+
+    @include media($desktop) {
+      @include span-columns(4);
+      @include omega(3n);
+    }
+
+    @include media($mobile) {
+      @include fill-parent;
+    }
+
     margin-bottom: $gutter;
     text-align: center;
   }
