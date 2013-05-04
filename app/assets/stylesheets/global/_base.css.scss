@@ -1,5 +1,5 @@
-$mobile: new-breakpoint(max-width 740px 6);
-$desktop: new-breakpoint(min-width 740px 6);
+$mobile: new-breakpoint(max-width 480px);
+$desktop: new-breakpoint(min-width 480px);
 $white: #FAFAFF;
 $yellow: #FBE500;
 
@@ -16,9 +16,9 @@ body {
 }
 div#container {
   @include outer-container;
-  width: 960px;
+  width: 1140px;
   @include media($desktop) {
-    max-width: 960px;
+    width: 960px;
   }
   @include media($mobile) {
     width: 480px;

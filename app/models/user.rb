@@ -5,11 +5,13 @@ class User < ActiveRecord::Base
   attr_accessible :username, :remember_token
   validates_format_of :username, with: /\A[a-z0-9_-]{2,19}\Z/i
 
+  validate :limit_selection_count
+
   has_many :selections, limit: 9
   has_many :albums, through: :selections, order: 'created_at DESC'
 
-  validates_each :albums do |user, attr, value|
-    user.errors.add :base, "Can't add more than 9 albums. Remove one?" if user.albums.size >= 9
+  def limit_selection_count
+    errors.add(:selections, "Too many selections") if vinyls.count > 9
   end
 
   def to_param

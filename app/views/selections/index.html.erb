@@ -6,7 +6,7 @@
           <span class="album-artist"><%= selection.album.artist %></span>
           <span class="album-title"><%= selection.album.title %></span>
         </div>
-        <%= image_tag selection.album.album_art.url(:medium), class: "album-art" %>
+        <%= image_tag selection.album.album_art.url(:thumb), class: "album-art" %>
       <% end %>
     </li>
   <% end %>
