@@ -1,0 +1,37 @@
+$white: #FFFFF0;
+$yellow: #FBE500;
+$blue: #18A4F5;
+$red: #A6080E;
+
+body {
+  padding: 0; margin: 0;
+  background-color: black;
+  color: $white;
+  font: {
+    family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    size: 16px/1em;
+  }
+  line-height: 24px;
+}
+div#container {
+  @include outer-container;
+  width: 1080px;
+}
+.notice, .error {
+  @include fill-parent;
+  line-height: 48px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.notice {
+  background: $yellow;
+  color: black;
+  a { color: black; }
+}
+
+.error {
+  background: red;
+}
+// Sorry TypeKit
+img.typekit-badge { display: none !important; }
