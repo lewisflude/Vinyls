@@ -1,13 +1,13 @@
-<ul class='album-list'>
+<div class='album-list'>
   <% @selections.each do |selection| %>
-    <li>
-      <%= link_to selection.user, class: "album" do %>
+    <div class="album">
+      <%= link_to selection do %>
+        <%= image_tag selection.album.album_art.url(:thumb), class: "album-art" %>
         <div class="album-info">
           <span class="album-artist"><%= selection.album.artist %></span>
           <span class="album-title"><%= selection.album.title %></span>
         </div>
-        <%= image_tag selection.album.album_art.url(:thumb), class: "album-art" %>
       <% end %>
-    </li>
+    </div>
   <% end %>
-</ul>
+</div>

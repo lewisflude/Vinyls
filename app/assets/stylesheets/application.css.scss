@@ -12,13 +12,14 @@
  */
 
 @import "bourbon";
+@import "grid-settings";
 @import "neat";
-@import "global/base";
-@import "global/typography";
-@import "global/form";
-@import "global/header";
-@import "global/albums";
-@import "global/users";
+@import "base";
+@import "typography";
+@import "form";
+@import "header";
+@import "albums";
+@import "users";
 
 
 

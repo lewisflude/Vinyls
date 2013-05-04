@@ -7,11 +7,11 @@ class User < ActiveRecord::Base
 
   validate :limit_selection_count
 
-  has_many :selections, limit: 9
+  has_many :selections, limit: 8
   has_many :albums, through: :selections, order: 'created_at DESC'
 
   def limit_selection_count
-    errors.add(:selections, "Too many selections") if vinyls.count > 9
+    errors.add(:selections, "Too many selections") if vinyls.count > 8
   end
 
   def to_param

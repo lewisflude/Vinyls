@@ -17,7 +17,7 @@
     <nav>
       <ul>
         <% if signed_in? %>
-          <% if current_user.selections.count < 9 %>
+          <% if current_user.selections.count < 8 %>
             <li><%= link_to 'Add a Selection', new_selection_path %></li>
           <% end %>
           <li>Logged in as <%= link_to current_user.username, user_path(current_user), class: 'current-user' %></li>
