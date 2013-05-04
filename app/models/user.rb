@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :albums, through: :selections, order: 'created_at DESC'
 
   def limit_selection_count
-    errors.add(:selections, "Too many selections") if vinyls.count > 8
+    errors.add(:selections, "Too many selections") if selections.count > 8
   end
 
   def to_param
