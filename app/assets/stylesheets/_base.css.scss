@@ -1,9 +1,10 @@
 $white: #FCFCFF;
 $yellow: #FBE500;
 $blue: #18A4F5;
-$green: mix($yellow, $blue, 50%);
+$green: mix($blue, $yellow, 50%);
 $red: #A6080E;
 $black: #000F0F;
+$grey: mix($white, $black, 75%);
 
 $base-color: $blue;
 
@@ -36,13 +37,15 @@ div#container {
 }
 
 .notice {
-  background: $yellow;
+  background: $green;
+  box-shadow: 0 0 16px 0 $green;
   color: black;
   a { color: black; }
 }
 
 .error {
-  background: red;
+  background: $red;
+  box-shadow: 0 0 16px 0 $red;
 }
 // Sorry TypeKit
 img.typekit-badge { display: none !important; }

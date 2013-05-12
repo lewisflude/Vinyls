@@ -56,6 +56,10 @@
   @include button;
 }
 
+.button-secondary {
+  @include button($grey);
+}
+
 // Main form styling
 
 form {
@@ -102,4 +106,11 @@ form {
     font-size: 16px;
   }
 
+}
+
+// Sign in styling
+
+.forgot-password {
+  display: inline-block;
+  float: right;
 }
