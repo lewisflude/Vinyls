@@ -1,12 +1,16 @@
 <%= form_tag selections_path, method: 'post' do %>
+<fieldset>
   <%= label_tag :title %>
   <%= text_field_tag :title %>
-  
+</fieldset>
+<fieldset>
   <%= label_tag :artist %>
   <%= text_field_tag :artist %>
-    
+</fieldset>
+<fieldset>
   <%= label_tag :description %>
   <%= text_area_tag :description %>
+</fieldset>
   <%= submit_tag "Add Record", class: 'button' %>
 
 
