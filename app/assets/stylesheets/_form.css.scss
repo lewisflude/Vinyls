@@ -1,9 +1,7 @@
-@mixin button($color: $yellow) {
+@mixin button($color: $green) {
   @include link-reset;
   padding: 0 8px;
   background: $color;
-  @include linear-gradient($color, darken($color, 10%));
-  box-shadow: 0 0 6px rgba(black, 0.5);
   line-height: 24px;
   border-radius: 2px;
   border: none;
@@ -12,9 +10,10 @@
   font-weight: 700;
   display: inline-block;
   cursor: pointer;
-  @include transition (all 120ms ease-in-out);
+  @include transition (all 80ms ease-in-out);
+  box-shadow: 0 4px 0 0 darken($color, 25%);
   &:hover {
-    @include linear-gradient(lighten($color, 10%), $color);
+    background: lighten($color, 10%);
   }
   a { color: black; }
 }
@@ -70,7 +69,7 @@ form {
   }
 
   input.button {
-    @include fill-parent;
+    @include shift(2);
   }
   textarea {
     @include default-textarea;
@@ -95,30 +94,4 @@ form {
     font-size: 16px;
   }
 
-}
-
-// Add vinyl form
-
-div.add-vinyl form {
-  @include fill-parent;
-  height: 100%;
-  padding: 8px; margin: 0;
-  input {
-      @include fill-parent;
-      height: 24px;
-      font-size: golden-ratio(16px, -1);
-      margin-bottom: 12px;
-  }
-  label {
-    width: auto;
-    font-size: golden-ratio(16px, -1);
-    line-height: 24px;
-    height: 24px; margin: 4px 0;
-    padding: 0 4px;
-  }
-
-  input.button {
-    margin-top: 30px;
-    @include mini-button;
-  }
 }

@@ -17,6 +17,8 @@ gem 'aws-sdk'
 group :development do
  gem 'awesome_print', require: 'awesome_print'
  gem 'rspec-rails'
+ gem 'guard'
+ gem 'guard-livereload'
 end
 
 group :development, :test do

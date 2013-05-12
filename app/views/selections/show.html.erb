@@ -5,29 +5,26 @@
   <% end %>
 </div>
 
-<ul class='single-album-list'>
-  <li class="artist"><%= @selection.album.artist %></li>
-  <li class="title"><%= @selection.album.title %></li>
-  <li><%= image_tag @selection.album.album_art.url %></li>  
-</ul>
+<div class="selection-art">
+  <%= image_tag @selection.album.album_art.url(:medium) %> 
+</div>
 
+<div class="selection-info">
+  <ul>
+    <li class="selection-artist"><%= @selection.album.artist %></li>
+    <li class="selection-title"><%= @selection.album.title %></li>
+  </ul>
+</div>
 
 <nav class="secondary">
-
   <ul>
-
     <% if current_user && current_user.id == @selection.user_id %>
-    
       <li><%= link_to "Edit", edit_selection_path %></li>
       <li><%= link_to 'Remove', { action: :destroy, id: @selection.id }, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-      <li><%= link_to 'Back to List', root_path %></li>
-    
+      <li><%= link_to 'Back to List', root_path %></li>    
     <% else %>
-
       <li><%= link_to 'Back to List', root_path %></li>
-
     <% end %>
-
   </ul>
 </nav>
 

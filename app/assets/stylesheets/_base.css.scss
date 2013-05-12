@@ -1,21 +1,30 @@
-$white: #FFFFF0;
+$white: #FCFCFF;
 $yellow: #FBE500;
 $blue: #18A4F5;
+$green: mix($yellow, $blue, 50%);
 $red: #A6080E;
+$black: #000000;
+
+$link-color: $blue;
+$text-color: #fbfbfb;
+$border-color: rgba($text-color, 0.2);
+$shadow-color: rgba($black, 0.5);
+
 
 body {
   padding: 0; margin: 0;
-  background-color: black;
-  color: $white;
+  background: mix($black, $blue, 85%);
+  color: $text-color;
+  position: relative;
   font: {
     family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    size: 16px/1em;
+    size: 16px/1em; 
   }
+
   line-height: 24px;
 }
 div#container {
   @include outer-container;
-  width: 1080px;
 }
 .notice, .error {
   @include fill-parent;

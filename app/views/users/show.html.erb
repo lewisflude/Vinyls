@@ -1,24 +1,9 @@
 <div class='username-header'>Selected by <%= link_to @user.username, @user %></div>
 
-<div class='album-list'>
+<div class="selections">
   <% @selections.each do |selection| %>
-    <div class="album">
-      <%= link_to selection do %>
-        <%= image_tag selection.album.album_art.url(:medium), class: "album-art" %>
-        <div class="album-info">
-          <span class="album-artist"><%= selection.album.artist %></span>
-          <span class="album-title"><%= selection.album.title %></span>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-  <% if signed_in? && @user == current_user %>
-    <% if current_user.selections.count < 8 %>
-      <li>      
-        <div class="add-album">
-          <%= link_to '', new_selection_path %>
-        </div>
-      </li>
+    <%= link_to selection, class: 'selection' do %>
+      <%= image_tag selection.album.album_art.url(:thumb), class: "selection-thumb" %>
     <% end %>
   <% end %>
 </div>

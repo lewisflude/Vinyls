@@ -10,7 +10,7 @@ class Album < ActiveRecord::Base
   has_attached_file :album_art, :styles => { 
     medium: "300x300!", 
     small: "150x150>",
-    thumb: "250x250#" }, 
+    thumb: "80x80#" }, 
     dependent: :destroy,
     storage: :s3, 
     s3_credentials: S3_CREDENTIALS,
