@@ -72,20 +72,19 @@ form {
 
   label {
     width: 20%;
-    height: 48px;
-    border-top-left-radius: 24px;
-    border-bottom-left-radius: 24px;
-    line-height: 48px;
+
     float: left;
-    margin: 0;
+    margin-bottom: 12px;
     text-transform: uppercase;
   }
 
   input {
     @include default-input;
+
   }
 
   input.button {
+    margin-top: 24px;
   }
   textarea {
     @include default-textarea;
