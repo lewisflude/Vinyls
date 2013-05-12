@@ -8,6 +8,8 @@ gem 'rails', '3.2.13'
 gem 'pg'
 gem 'rest-client'
 
+gem 'haml'
+
 gem "paperclip", "~> 2.7"
 gem 'clearance', '1.0.0.rc7'
 gem 'aws-sdk'

@@ -1,0 +1,35 @@
+!!!
+%html
+  %head
+    %title Vinyls
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = favicon_link_tag
+    = csrf_meta_tags
+    %meta{:content => "One profile, eight albums. Select  your top eight albums of all time and tell the world what they mean to you. Meet others with a similar taste in music to you and form discussions around the albums you both enjoy.", :name => "description"}/
+  %body
+    #container
+      %header
+        = link_to "Vinyls", root_path, id: "logo"
+        %nav
+          %ul
+            - if signed_in?
+              - if current_user.selections.count < 8
+                %li= link_to 'Add a Selection', new_selection_path
+              %li
+                Logged in as #{link_to current_user.username, user_path(current_user), class: 'current-user'}
+              %li= link_to "Sign out", sign_out_path, method: "delete"
+            - else
+              %li= link_to "Sign in", sign_in_path
+              %li= link_to "Join Vinyls", join_path
+      .notice= flash[:notice]
+      .error= flash[:error]
+      = yield
+    :javascript
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-40230818-1', 'herokuapp.com');
+      ga('send', 'pageview');
