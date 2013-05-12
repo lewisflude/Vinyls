@@ -1,2 +1,2 @@
 $(document).ready ->
-  $('.notice, .error').delay(3200).fadeOut(800)
+  $('.notice, .error').delay(3200).fadeOut(1600)
