@@ -4,6 +4,7 @@ header {
   padding: 12px 0;  
   margin-bottom: 24px;
   border-bottom: 1px solid $border-color;
+
   @include row;
 
   a#logo {
@@ -35,22 +36,6 @@ header {
     @include media($mobile) {
       @include fill-parent;
       text-align: center;
-    }
-
-
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      li {
-        display: inline;
-        height: 24px;
-        &:not(:first-of-type) {
-          border-left: 1px solid $border-color;
-          margin-left: 4px;
-          padding-left: 8px;
-        }
-      }
     }
   }
 }
