@@ -1,18 +1,15 @@
-<div class="description-block">
-  <div class='username-header'>Selected by <%= link_to @selection.user.username, @selection.user %></div>
-  <% if @selection.description %>
-    <div class="description"><%= @selection.description %></div>
-  <% end %>
-</div>
-
 <div class="selection-art">
   <%= image_tag @selection.album.album_art.url(:medium) %> 
 </div>
 
 <div class="selection-info">
+  <div class='username-header'>Selected by <%= link_to @selection.user.username, @selection.user %></div>
   <ul>
     <li class="selection-artist"><%= @selection.album.artist %></li>
     <li class="selection-title"><%= @selection.album.title %></li>
+    <% if @selection.description %>
+      <li class="selection-description"><%= @selection.description %></li>
+    <% end %>
   </ul>
 </div>
 
