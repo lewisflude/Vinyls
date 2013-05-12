@@ -48,8 +48,24 @@ body {
     size: 16px;
     weight: 300;
   }
+  @include media($tablet) {
+    font: {
+      size: 14px;
+      weight: 500;
+    }
+  }
+
+  @include media($mobile) {
+    font: {
+      size: 12px;
+      weight: 500;
+    }
+  }
+  
   line-height: 24px;
 }
+
+
 
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
@@ -73,6 +89,7 @@ h3, h4, h5, h6 {
 }
 
 @mixin link-reset {
+  border: none;
   &:hover {
     border: none;
   }
@@ -89,21 +106,4 @@ p.large-text {
   font-weight: 100;
 }
   
-nav {
-  word-wrap: none;
-  $white-space: nowrap;
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    li {
-      display: inline;
-      height: 24px;
-      &:not(:first-of-type) {
-        border-left: 1px solid $border-color;
-        margin-left: 4px;
-        padding-left: 8px;
-      }
-    }
-  }
-}
+

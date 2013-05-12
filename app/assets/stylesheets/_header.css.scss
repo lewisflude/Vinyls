@@ -4,12 +4,18 @@ header {
   padding: 12px 0;  
   margin-bottom: 24px;
   border-bottom: 1px solid $border-color;
-
   @include row;
 
   a#logo {
-    @include span-columns(6);
     @include link-reset;
+    @include span-columns(3);
+    @include media($mobile) {
+      @include fill-parent;
+      text-align: center;
+      padding-left: 0;
+      background-position: center;
+    }
+
     color: $text-color;
     font-size: golden-ratio(16px, 1);
     text-transform: uppercase;
@@ -23,7 +29,29 @@ header {
     }
   }
   nav {
-    @include span-columns(6);
+    @include span-columns(9);
     text-align: right;
+    
+    @include media($mobile) {
+      @include fill-parent;
+      text-align: center;
+    }
+
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline;
+        height: 24px;
+        &:not(:first-of-type) {
+          border-left: 1px solid $border-color;
+          margin-left: 4px;
+          padding-left: 8px;
+        }
+      }
+    }
   }
 }
+
