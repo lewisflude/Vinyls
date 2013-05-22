@@ -11,7 +11,10 @@ class AlbumSelectionServices
     return album if album
     
     album_info = LastFm.fetch(artist, title)
-
-    Album.create(artist: album_info['artist'], title: album_info['title'], album_art: album_info['album_art'])
+    if album_info
+      Album.create(artist: album_info['artist'], title: album_info['title'], album_art: album_info['album_art'])
+    else
+      redirect_to album_art_path
+    end
   end
 end
