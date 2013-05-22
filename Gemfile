@@ -35,8 +35,8 @@ end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3', require: 'sass-rails'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'bourbon'
-  gem 'neat'
+  gem 'bourbon', require: 'bourbon'
+  gem 'neat', require: 'neat'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
