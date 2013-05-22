@@ -1,13 +1,11 @@
 <%= form_for @album do |form| %>
-
   <% @album.errors.full_messages.each do |message| %>
     <p><%= message %></p>
   <% end %>
-
-  <fieldset><%= form.label :title %>
-    <%= form.text_field :title, :required => true %></fieldset>
   <fieldset><%= form.label :artist, :required => true %>
     <%= form.text_field :artist %></fieldset>
+  <fieldset><%= form.label :title %>
+    <%= form.text_field :title, :required => true %></fieldset>
   <fieldset><%= form.label :thoughts, :required => true %>
     <%= form.text_area :thoughts %></fieldset>
   <fieldset><%= form.label :album_art %>

@@ -57,6 +57,7 @@ Vinyls::Application.routes.draw do
   root :to => 'selections#index'
 
   get '/sign_in' => 'clearance/sessions#new', as: 'sign_in'
+  get '/albums/new' => 'albums#new', as: 'new_album'
   get '/join' => 'clearance/users#new', as: 'join'
   delete '/sign_out' => 'clearance/sessions#destroy', as:'sign_out'
   get "/:username", to: "users#show", as: "user"

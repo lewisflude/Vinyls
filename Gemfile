@@ -12,6 +12,7 @@ gem 'haml'
 
 gem "paperclip", "~> 2.7"
 gem 'clearance', '1.0.0.rc7'
+gem 'cancan'
 gem 'aws-sdk'
 
 # gem 'discogs-wrapper', require: 'discogs'

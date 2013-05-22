@@ -39,6 +39,7 @@ GEM
       sass (>= 3.2.0)
       thor
     builder (3.0.4)
+    cancan (1.6.9)
     clearance (1.0.0.rc7)
       bcrypt-ruby
       email_validator
@@ -192,6 +193,7 @@ DEPENDENCIES
   aws-sdk
   bcrypt-ruby (~> 3.0.0)
   bourbon
+  cancan
   clearance (= 1.0.0.rc7)
   coffee-rails (~> 3.2.1)
   guard
