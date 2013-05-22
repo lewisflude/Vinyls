@@ -11,12 +11,37 @@
 
     margin-bottom: 12px;
     border: none;
-    
+    @include transition(opacity 120ms ease-in-out);
     &:hover {
     	opacity: 0.5;
     }
-    
   }
+}
+
+.selection-thumb {
+    width: 100%;
+    height: 100%;
+    @include default-box-shadow;
+    margin-bottom: 24px;
+}
+
+.selection-album-artist, .selection-album-title {
+    display: inline-block;
+    height: 48px;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.selection-album-artist {
+    font-size: golden-ratio(16px, 1);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.selection-album-title {
+    margin-bottom: 24px;
 }
 
 .selection-artist {
@@ -32,11 +57,6 @@
     color: $yellow;
 }
 
-.selection-thumb {
-	width: 100%;
-	height: 100%;
-    @include default-box-shadow;
-}
 
 .selection-art {
     @include span-columns(6);

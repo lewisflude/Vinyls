@@ -3,20 +3,20 @@ $yellow: #FBE500;
 $blue: #18A4F5;
 $green: mix($blue, $yellow, 50%);
 $red: #A6080E;
-$black: #000F0F;
-$grey: mix($white, $black, 75%);
+$background-color: darken($blue, 48%);
+$grey: mix($white, black, 75%);
 
 $base-color: $blue;
 
 $link-color: $blue;
 $text-color: #fbfbfb;
 $border-color: rgba($base-color, 0.2);
-$shadow-color: rgba($black, 0.5);
+$shadow-color: rgba(black, 0.5);
 
 
 body {
   padding: 0; margin: 0;
-  background: $black;
+  background: $background-color;
   color: $text-color;
   position: relative;
   font: {

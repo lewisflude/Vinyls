@@ -4,6 +4,8 @@
   <% @selections.each do |selection| %>
     <%= link_to selection, class: 'selection' do %>
       <%= image_tag selection.album.album_art.url(:thumb), class: "selection-thumb" %>
+      <div class="selection-album-artist"><%= selection.album.artist %></div>
+      <div class="selection-album-title"><%= selection.album.title %></div>
     <% end %>
   <% end %>
 </div>
