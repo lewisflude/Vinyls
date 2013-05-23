@@ -56,6 +56,8 @@ module Vinyls
     # Enable the asset pipeline
     config.assets.enabled = true
 
+    config.assets.initialize_on_precompile = false
+
     config.generators do |g|
          g.template_engine :haml
     end
