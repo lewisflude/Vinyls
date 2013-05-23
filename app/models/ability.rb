@@ -11,6 +11,9 @@ class Ability
       can :update, Selection do |selection|
         selection.try(:user) == user
       end
+      can :destroy, Selection do |selection|
+        selection.try(:user) == user
+      end
     end
   end
 end
