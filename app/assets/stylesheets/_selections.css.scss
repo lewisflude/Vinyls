@@ -1,33 +1,59 @@
 .selections {
   .selection {
-    @include span-columns(3);
-    @include omega(4n);
-    
+    @include media($desktop) {
+        @include span-columns(4);
+        @include omega(3n);
+    }
+    @include media($tablet) {
+        @include span-columns(4);
+        @include omega(2n);
+    }
+
     @include link-reset;
+    
+    color: $text-color;
 
     @include media($mobile) {
 	  @include fill-parent;
 	}
 
-    margin-bottom: 12px;
+    position: relative;
+
+    margin-bottom: 48px;
     border: none;
-    @include transition(opacity 120ms ease-in-out);
-    &:hover {
-    	opacity: 0.5;
-    }
   }
 }
 
-.selection-thumb {
-    width: 100%;
-    height: 100%;
-    @include default-box-shadow;
-    margin-bottom: 24px;
+.selection-album-details, .selection-album-thumb {
+    width: 80%;
+    display: block;    
 }
+.selection-album-details {
+    position: absolute;
+    background: rgba(black,0.8);
+    height: 100%;
+    margin: 0 10%;
+    padding: 10%;
+    opacity: 0;
+    @include transition(opacity 120ms ease-in-out);
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.selection-album-thumb {
+    height: 80%;
+    margin: 0 auto;
+
+}
+
+
+
+
 
 .selection-album-artist, .selection-album-title {
     display: inline-block;
-    height: 48px;
+    height: 50%;
     width: 100%;
     overflow: hidden;
     text-align: center;
