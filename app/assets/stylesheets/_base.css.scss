@@ -1,16 +1,16 @@
 $yellow: #FBE500;
-$blue: #18A4F5;
-$green: mix($blue, $yellow, 50%);
+$blue: #002288;
+$green: #00A020;
 $red: #A6080E;
-$background-color: #000;
+$background-color: #E6E6E6;
 $grey: mix(white, black, 75%);
 
 $base-color: $blue;
 
 $link-color: $blue;
-$text-color: #E6E6E6;
-$border-color: rgba(#E6E6E6, 0.5);
-$shadow-color: rgba(black, 0.5);
+$text-color: #444;
+$border-color: #CCCCCC;
+$shadow-color: rgba(black, 0.35);
 
 
 body {
