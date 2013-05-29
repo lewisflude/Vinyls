@@ -1,14 +1,16 @@
 $yellow: #FBE500;
-$blue: #002288;
-$green: #00A020;
+$blue: hsl(240, 50, 50);
+$green: hsl(115, 50, 50);
 $red: #A6080E;
-$background-color: #E6E6E6;
-$grey: mix(white, black, 75%);
+$background-color: hsl(0,0,10);
+$sidebar-color: hsl(0,0,15);
+$grey: hsl(0,0,20);
 
 $base-color: $blue;
 
-$link-color: $blue;
-$text-color: #444;
+$link-color: hsl(240,50,50);
+$text-color: #E6E6E6;
+$dark-text-color: hsl(0,0,10);
 $border-color: #CCCCCC;
 $shadow-color: rgba(black, 0.35);
 
@@ -28,6 +30,15 @@ body {
 div#container {
   @include outer-container;
 }
+.main-wrapper {
+  @include span-columns(9);
+  @include omega;
+    
+  @include media($mobile) {
+    @include fill-parent;
+  }
+}
+
 .notice, .error {
   @include fill-parent;
   line-height: 48px;

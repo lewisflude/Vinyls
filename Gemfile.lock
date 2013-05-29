@@ -67,6 +67,8 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     ffi (1.8.1)
+    font-awesome-rails (3.1.1.2)
+      railties (>= 3.2, < 5.0)
     formatador (0.2.4)
     guard (1.8.0)
       formatador (>= 0.2.4)
@@ -196,6 +198,7 @@ DEPENDENCIES
   cancan
   clearance (= 1.0.0.rc7)
   coffee-rails (~> 3.2.1)
+  font-awesome-rails
   guard
   guard-livereload
   haml

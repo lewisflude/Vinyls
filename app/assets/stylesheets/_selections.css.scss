@@ -2,17 +2,14 @@
 
     // UL Reset
     padding: 0;
+    margin: 0;
     
   .selection {
 
     box-shadow: 0 2px 6px $shadow-color;
     @include media($desktop) {
-        @include span-columns(3);
-        @include omega(4n);
-    }
-    @include media($tablet) {
-        @include span-columns(4);
-        @include omega(2n);
+        @include span-columns(3 of 9);
+        @include omega(3n);
     }
         
     @include media($mobile) {
@@ -32,7 +29,6 @@
 
 .selection-album-details, .selection-album-thumb {
     width: 100%;
-    border-radius: 2px;
     display: block;    
 }
 

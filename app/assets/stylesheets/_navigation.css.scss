@@ -4,12 +4,11 @@ nav {
       margin: 0;
       padding: 0;
       li {
-        display: inline;
-        height: 24px;
-        &:not(:first-of-type) {
-          border-left: 1px solid $border-color;
-          margin-left: 4px;
-          padding-left: 8px;
+        display: block;
+        @include button($grey);
+        a {
+          @include link-reset;
+          color: $text-color;
         }
       }
     }
