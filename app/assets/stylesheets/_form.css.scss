@@ -1,23 +1,28 @@
-@mixin button($color: $green) {
+@mixin button($color: $grey) {
   @include link-reset;
   width: 100%;
-  font-weight: 700;
+  font-weight: 300;
+  
+  border-radius: 4px;
   padding: 0 12px;
-  background: $color;
+  position: relative;
+  border: 1px solid lighten($color, 5%);
+  @include linear-gradient($color, darken($color, 5%));
   line-height: 48px;
   box-shadow: none;
-  color: $dark-text-color;
+  color: $text-color;
   font-family: inherit;
   margin-bottom: 12px;
   display: inline-block;
   cursor: pointer;
-  @include transition (all 80ms ease-in-out);
   &:hover {
+    border: 1px solid lighten($color, 5%);
     background: lighten($color, 5%);
   }
   a { 
+    @include link-reset;
     display: block;
-    color: black; 
+    color: inherit; 
     width: 100%;
     height: 100%;
   }
@@ -58,7 +63,8 @@
 }
 
 .button {
-  @include button;
+  @include button($green);
+  color: $dark-text-color;
 }
 
 .button-secondary {
@@ -68,9 +74,13 @@
 
 // Main form styling
 
+.form-wrapper {
+  max-width: 480px;
+
+  margin: 0 auto;
+}
+
 form {
-  @include span-columns(8);
-  @include shift(2);
 
   input, textarea {
     @include fill-parent;
@@ -90,6 +100,7 @@ form {
   }
 
   input.button {
+
     margin-top: 28px;
   }
   textarea {

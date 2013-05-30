@@ -8,36 +8,37 @@
     = csrf_meta_tags
     %meta{:content => "One profile, eight albums. Select  your top eight albums of all time and tell the world what they mean to you. Meet others with a similar taste in music to you and form discussions around the albums you both enjoy.", :name => "description"}/
   %body
-    #container
-        
-      .notice= flash[:notice]
-      .error= flash[:error]
-      .sidebar
-        = link_to "Vinyls", root_path, id: "logo"
-        %nav
-          %ul
-            - if signed_in?
-     
+    %header
+      = link_to "Vinyls", root_path, id: "logo"
+      %nav
+        %ul
+          - if signed_in?   
+            - if current_user.selections.count < 8
               %li
                 = link_to user_path(current_user) do
-                  = current_user.username               
-              - if current_user.selections.count < 8
-                %li
-                  = link_to new_selection_path do
-                    New Selection 
+                  My Profile
               %li
-                = link_to sign_out_path, method: "delete" do
-                  Sign Out
+                = link_to new_selection_path do
+                  New Selection
+          - if signed_in?          
 
-            - else
-              %li
-                = link_to sign_in_path do
-                  Sign In
-              %li
-                = link_to join_path do
-                  Join Vinyls
+            %li
+              = link_to sign_out_path, method: "delete" do
+                Sign Out
 
+          - else
+            %li
+              = link_to sign_in_path do
+                Sign In
+            %li
+              = link_to join_path do
+                Join Vinyls
 
+    #container
+      .notice= flash[:notice]
+      .error= flash[:error]
+      / .sidebar  
+      /   %ul
       .main-wrapper
         = yield
     :javascript

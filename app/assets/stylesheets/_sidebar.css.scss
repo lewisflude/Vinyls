@@ -2,43 +2,28 @@
   @include span-columns(3);
   @include pad;
   
+  border-radius: 4px;
+  @include default-box-shadow;
   
+
   position: relative;
   
-  background: $sidebar-color;
+  /*background: $sidebar-color;*/
   
   @include media($mobile) {
     @include fill-parent;
   }
-}
-
-a#logo {
-  @include link-reset;
-  @include span-columns(3);
-  @include media($mobile) {
-    @include fill-parent;
-    text-align: center;
-    padding-left: 0;
-    background-position: center;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      @include button;
+    }
   }
 
-  color: $text-color;
-  font-size: golden-ratio(16px, 1);
-  text-transform: uppercase;
-  height: 48px;
-  line-height: 48px;
-  letter-spacing: 4px;
-  margin-bottom: 24px;
-  font-weight: 300;
-  padding-left: 60px;
-  background: url('vinyls-logo-48.png') no-repeat;
-  &:hover { 
-    color: $link-color;
-  }
 }
 
-nav {
-  
-}
+
 
 

@@ -45,30 +45,23 @@
 body {
   font: {
     family: 'Proxima Nova';
-    size: 16px;
+    size: 14px;
     weight: 300;
   }
-  @include media($tablet) {
-    font: {
-      size: 14px;
-      weight: 500;
+    @include media($tablet) {
+        font-size: 16px;
     }
-  }
-
-  @include media($mobile) {
-    font: {
-      size: 12px;
-      weight: 500;
-    }
-  }
   
+    @include media($mobile) {
+        font-size: 18px;
+    }
   line-height: 24px;
 }
 
 
 
 h1, h2, h3, h4, h5, h6 {
-  text-align: center;
+
 }
 
 h1, h2 {
@@ -77,6 +70,14 @@ h1, h2 {
 
 h3, h4, h5, h6 {
   margin-bottom: 24px;
+}
+
+h1 {
+    line-height: 48px;
+    font-size: golden-ratio(16px, 2);
+}
+h2 {
+    font-size: golden-ratio(16px, 1);
 }
 
 @mixin default-link {

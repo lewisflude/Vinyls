@@ -1,19 +1,22 @@
-<%= form_tag selections_path, method: 'post' do %>
+<div class="form-wrapper">
 
-<fieldset>
-  <%= label_tag :artist %>
-  <%= text_field_tag :artist %>
-</fieldset>
-<fieldset>
-  <%= label_tag :title %>
-  <%= text_field_tag :title %>
-</fieldset>
-<fieldset>
-  <%= label_tag :description %>
-  <%= text_area_tag :description %>
-</fieldset>
-  <%= submit_tag "Add a Record from Last.fm", class: 'button' %>
+  <%= form_tag selections_path, method: 'post' do %>
 
-<% end %>
+  <fieldset>
+    <%= label_tag :artist %>
+    <%= text_field_tag :artist %>
+  </fieldset>
+  <fieldset>
+    <%= label_tag :title %>
+    <%= text_field_tag :title %>
+  </fieldset>
+  <fieldset>
+    <%= label_tag :description %>
+    <%= text_area_tag :description %>
+  </fieldset>
+    <%= submit_tag "Add a Record from Last.fm", class: 'button' %>
 
-<%= link_to "Add Custom Album", new_album_path %>
+  <% end %>
+
+  <%= link_to "Add Custom Album", new_album_path %>
+</div>

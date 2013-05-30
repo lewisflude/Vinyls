@@ -1,36 +1,35 @@
 <p class="notice"><%= notice %></p>
-
-<%= form_for @user do |form| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+<div class="form-wrapper">
+  <%= form_for @user do |form| %>
+    <% if @user.errors.any? %>
+      <div class="error_messages">
+        <h2>Form is invalid</h2>
+        <ul>
+          <% for message in @user.errors.full_messages %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <p>
+      <%= form.label :username %><br/>
+      <%= form.text_field :username %><br/>
+    </p>
+    <p>
+      <%= form.label :email %><br/>
+      <%= form.text_field :email %><br/>
+    </p>
+    <p>
+      <%= form.label :password %><be/>
+      <%= form.password_field :password %><br/>
+    </p>
+    <p>
+      <%= form.label :password_confirmation %><br/>
+      <%= form.password_field :password_confirmation %><br/>
+    </p>
+    <%= form.submit 'Update Account', class: 'button' %>
   <% end %>
-  <p>
-    <%= form.label :username %><br/>
-    <%= form.text_field :username %><br/>
-  </p>
-  <p>
-    <%= form.label :email %><br/>
-    <%= form.text_field :email %><br/>
-  </p>
-  <p>
-    <%= form.label :password %><be/>
-    <%= form.password_field :password %><br/>
-  </p>
-  <p>
-    <%= form.label :password_confirmation %><br/>
-    <%= form.password_field :password_confirmation %><br/>
-  </p>
-  <%= form.submit 'Update Account', class: 'button' %>
-<% end %>
-
-
+</div>
 
 
 <%= link_to "Back to Users", users_path, class: "back-to-main" %>

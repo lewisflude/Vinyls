@@ -1,25 +1,27 @@
 <p class="notice"><%= notice %></p>
-<h1>Join Vinyls</h1>
-<%= form_for @user do |form| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+<div class="form-wrapper">
+  <h1>Join Vinyls</h1>
+  <%= form_for @user do |form| %>
+    <% if @user.errors.any? %>
+      <div class="error_messages">
+        <h2>Form is invalid</h2>
+        <ul>
+          <% for message in @user.errors.full_messages %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+      <%= form.label :username %>
+      <%= form.text_field :username %>
+
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+
+      <%= form.label :password %>
+      <%= form.password_field :password %>
+    <%= form.submit 'Join Vinyls', class: 'button' %>
   <% end %>
-    <%= form.label :username %>
-    <%= form.text_field :username %>
-
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  <%= form.submit 'Join Vinyls', class: 'button' %>
-<% end %>
+</div>
 
 
