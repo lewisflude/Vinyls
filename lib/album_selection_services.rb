@@ -1,4 +1,6 @@
 class AlbumSelectionServices
+
+
   def self.select_album(user, artist, title)
     album = find_or_create_album(artist, title)
     return user.selections.create(album: album)
@@ -17,4 +19,6 @@ class AlbumSelectionServices
       redirect_to album_art_path
     end
   end
+
+
 end
