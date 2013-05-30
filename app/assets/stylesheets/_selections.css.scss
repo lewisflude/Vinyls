@@ -6,7 +6,8 @@
     
   .selection {
 
-    box-shadow: 0 2px 6px $shadow-color;
+    overflow: hidden;
+
     @include media($desktop) {
         @include span-columns(3);
         @include omega(4n);
@@ -42,7 +43,9 @@
 }
 
 .selection-album-details {
+
     position: absolute;
+    text-align: center;
     background: rgba(black,.75);
     height: 100%;
     padding: 10%;

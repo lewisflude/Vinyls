@@ -7,40 +7,45 @@
     = favicon_link_tag
     = csrf_meta_tags
     %meta{:content => "One profile, eight albums. Select  your top eight albums of all time and tell the world what they mean to you. Meet others with a similar taste in music to you and form discussions around the albums you both enjoy.", :name => "description"}/
+    <script type="text/javascript" src="//use.typekit.net/knl3rrp.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   %body
-    %header
-      = link_to "Vinyls", root_path, id: "logo"
-      %nav
-        %ul
-          - if signed_in?   
-            - if current_user.selections.count < 8
-              %li
-                = link_to user_path(current_user) do
-                  My Profile
-              %li
-                = link_to new_selection_path do
-                  New Selection
-          - if signed_in?          
 
-            %li
-              = link_to sign_out_path, method: "delete" do
-                Sign Out
-
-          - else
-            %li
-              = link_to sign_in_path do
-                Sign In
-            %li
-              = link_to join_path do
-                Join Vinyls
 
     #container
+
+      %header
+        = link_to "Vinyls", root_path, id: "logo"
+        %nav
+          %ul
+            - if signed_in?   
+              - if current_user.selections.count < 8
+                %li
+                  = link_to user_path(current_user) do
+                    My Profile
+                %li
+                  = link_to new_selection_path do
+                    New Selection
+            - if signed_in?          
+
+              %li
+                = link_to sign_out_path, method: "delete" do
+                  Sign Out
+
+            - else
+              %li
+                = link_to sign_in_path do
+                  Sign In
+              %li
+                = link_to join_path do
+                  Join Vinyls
       .notice= flash[:notice]
       .error= flash[:error]
       / .sidebar  
       /   %ul
       .main-wrapper
         = yield
+
     :javascript
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
